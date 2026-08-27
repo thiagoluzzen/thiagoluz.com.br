@@ -1,0 +1,416 @@
+/* ---------------------------------------------------------------
+   Landing — Consulta Inicial · Thiago Luz / Escola de Consciências
+   Identidade: brandbook v1.6, PARTE 6 (cores §6.3, tipografia §6.4,
+   composição §6.5, formas §6.6). Mobile-first.
+   Nenhuma fonte, script ou recurso de terceiro é carregado.
+   Atualizado em 26/08/2026 para a copy final (pecas/copy/landing.md):
+   títulos de seção viraram frases inteiras, entraram o bloco de filtro,
+   os três passos e a linha de responsabilidade.
+   Revisão de 26/08/2026 (fechamento das credenciais): entrou o bloco
+   `.formacao` na seção "quem conduz"; `.pendencia` ficou sem uso na
+   página — mantido porque ainda há placeholders abertos (foto, pixel).
+   --------------------------------------------------------------- */
+
+:root {
+  /* Paleta oficial — §6.3. Nenhuma cor fora desta lista. */
+  --petroleo:   #0F2D3A;  /* predominante */
+  --ardosia:    #34495E;
+  --areia:      #D8CFC0;
+  --branco:     #F7F5EF;  /* branco quente */
+  --grafite:    #1F1F1F;
+  --salvia:     #8A9A8B;
+  --dourado:    #B99B5F;  /* só detalhes */
+
+  /* Tipografia — §6.4, exclusivamente sem serifa.
+     As famílias da lista são usadas se instaladas; o fallback é a
+     sem-serifa do sistema. Auto-hospedar o .woff2 é pendência:
+     ver especificacao-tecnica.md. */
+  --titulo: "League Spartan", "Manrope", "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --texto:  "Inter", "IBM Plex Sans", "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --coluna: 34rem;      /* coluna estreita: página de livro, não anúncio */
+  --margem: 1.75rem;
+  --ar: 5.5rem;         /* respiro vertical entre seções */
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--branco);
+  color: var(--petroleo);
+  font-family: var(--texto);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- acessibilidade ---------- */
+
+.pular {
+  position: absolute;
+  left: -9999px;
+}
+.pular:focus {
+  position: static;
+  display: block;
+  padding: 0.75rem var(--margem);
+  background: var(--petroleo);
+  color: var(--branco);
+}
+
+:focus-visible {
+  outline: 2px solid var(--dourado);
+  outline-offset: 3px;
+}
+
+/* ---------- estrutura ---------- */
+
+.topo {
+  padding: 2.25rem var(--margem) 0;
+}
+
+.marca {
+  margin: 0;
+  font-family: var(--titulo);
+  font-size: 0.8125rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ardosia);
+  font-weight: 500;
+}
+
+.sep { color: var(--salvia); padding: 0 0.25em; }
+
+.secao {
+  max-width: var(--coluna);
+  margin: 0 auto;
+  padding: var(--ar) var(--margem);
+}
+
+/* Uma linha fina separa as seções. §6.6: linhas retas e finas. */
+.secao + .secao {
+  border-top: 1px solid rgba(52, 73, 94, 0.14);
+}
+
+/* ---------- tipografia das seções ---------- */
+
+h1, h2 {
+  font-family: var(--titulo);
+  font-weight: 600;
+  color: var(--petroleo);
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 8.5vw, 2.9rem);
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+}
+
+/* Título de seção em frase inteira — a copy final não usa rótulos curtos.
+   Sem caixa alta: sentença longa em versal é ilegível no celular. */
+h2.frase {
+  font-size: clamp(1.5rem, 5.5vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--petroleo);
+  margin-bottom: 1.75rem;
+}
+
+/* O fechamento carrega a segunda frase-tese: um degrau acima. */
+h2.frase.fecho {
+  font-size: clamp(1.7rem, 6.5vw, 2.3rem);
+}
+
+.texto {
+  margin: 0 0 1.5rem;
+  color: var(--ardosia);
+}
+.texto:last-child { margin-bottom: 0; }
+
+/* Linha isolada de reconhecimento — ponto focal da seção "para quem". */
+.destaque {
+  font-family: var(--titulo);
+  font-size: 1.375rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--petroleo);
+  margin: 0 0 1.5rem;
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--areia);
+}
+
+/* ---------- hero ---------- */
+
+.hero { padding-top: 3.5rem; }
+
+.hero .sub {
+  margin: 1.75rem 0 0;
+  font-size: 1.125rem;
+  color: var(--ardosia);
+  max-width: 30rem;
+}
+
+.acao { margin: 2.75rem 0 0; }
+
+.nota-acao {
+  margin: 1rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--salvia);
+}
+
+/* ---------- CTA — único destino em toda a página ---------- */
+
+.cta {
+  display: inline-block;
+  background: var(--petroleo);
+  color: var(--branco);
+  font-family: var(--titulo);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  padding: 1.15rem 2rem;
+  border: 1px solid var(--petroleo);
+  border-radius: 2px;
+  min-height: 3rem;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.cta:hover,
+.cta:focus-visible {
+  background: transparent;
+  color: var(--petroleo);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta { transition: none; }
+}
+
+/* ---------- filtro de anti-público ---------- */
+
+.filtro {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+}
+
+.filtro li {
+  color: var(--ardosia);
+  padding: 0.85rem 0;
+  border-top: 1px solid rgba(52, 73, 94, 0.14);
+}
+.filtro li:last-child { border-bottom: 1px solid rgba(52, 73, 94, 0.14); }
+
+/* ---------- Método ROTA ---------- */
+
+.rota {
+  list-style: none;
+  counter-reset: rota;
+  margin: 0 0 2.5rem;
+  padding: 0;
+}
+
+.rota li {
+  counter-increment: rota;
+  display: flex;
+  flex-direction: column;
+  padding: 1.15rem 0;
+  border-top: 1px solid rgba(52, 73, 94, 0.14);
+}
+.rota li:last-child { border-bottom: 1px solid rgba(52, 73, 94, 0.14); }
+
+.rota .etapa {
+  font-family: var(--titulo);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--petroleo);
+}
+
+.rota .etapa::before {
+  content: counter(rota);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--dourado);
+  margin-right: 0.9rem;
+  vertical-align: 0.35em;
+}
+
+.rota .verbo {
+  font-family: var(--titulo);
+  font-size: 0.8125rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--salvia);
+  margin-top: 0.35rem;
+}
+
+.rota .desc {
+  color: var(--ardosia);
+  font-size: 1rem;
+  margin-top: 0.15rem;
+}
+
+/* ---------- os três passos práticos ---------- */
+
+.passos {
+  margin: 2.5rem 0 0;
+  padding-left: 1.35rem;
+  color: var(--ardosia);
+}
+
+.passos li { margin-bottom: 0.75rem; }
+.passos li:last-child { margin-bottom: 0; }
+
+/* ---------- CTA intermediário ---------- */
+
+.acao-meio { text-align: left; }
+.acao-meio .acao { margin-top: 0; }
+
+/* ---------- quem conduz ---------- */
+
+.foto-reservada {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--areia);
+  border: 1px solid rgba(52, 73, 94, 0.14);
+  margin-bottom: 2.5rem;
+}
+
+.quem .nome {
+  text-transform: none;
+  letter-spacing: -0.005em;
+  font-size: 1.75rem;
+  color: var(--petroleo);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.titulo {
+  margin: 0 0 1.75rem;
+  font-family: var(--titulo);
+  font-size: 0.8125rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dourado);
+}
+
+.ancora {
+  margin: 0 0 2.25rem;
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--areia);
+}
+
+.ancora p {
+  margin: 0;
+  font-family: var(--titulo);
+  font-size: 1.1875rem;
+  line-height: 1.6;
+  color: var(--petroleo);
+}
+
+/* Credencial — corpo menor que o parágrafo: credencial se lê, não se declama
+   (§9.2, "humanidade antes de autoridade"). Sem marcador, sem caixa, sem logo
+   de instituição; só as linhas finas que o resto da página já usa. */
+.formacao {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ardosia);
+}
+
+.formacao li {
+  padding: 0.7rem 0;
+  border-top: 1px solid rgba(52, 73, 94, 0.14);
+}
+.formacao li:last-child { border-bottom: 1px solid rgba(52, 73, 94, 0.14); }
+
+/* Placeholder bloqueante: precisa ser impossível de não ver.
+   Some da página no momento em que o Thiago responder.
+   Sem uso na página desde 26/08/2026 — as credenciais foram preenchidas.
+   Mantido para os placeholders que continuam abertos (foto, pixel). */
+.pendencia {
+  margin: 2rem 0 0;
+  padding: 0.85rem 1rem;
+  border: 1px dashed var(--dourado);
+  color: var(--ardosia);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+/* Aviso ético §9.1 — visível e legível, nunca letra miúda escondida. */
+.linha-responsa {
+  margin: 2rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--salvia);
+}
+
+/* ---------- fechamento ---------- */
+
+.fechamento { padding-bottom: calc(var(--ar) + 1rem); }
+
+/* ---------- rodapé ---------- */
+
+.rodape {
+  background: var(--petroleo);
+  color: var(--areia);
+  padding: 3rem var(--margem);
+}
+
+.rodape > * {
+  max-width: var(--coluna);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.assinatura {
+  margin: 0;
+  font-family: var(--titulo);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--salvia);
+}
+
+/* ---------- telas maiores: mais ar, mesma coluna ---------- */
+
+@media (min-width: 46rem) {
+  :root { --margem: 3rem; --ar: 7rem; }
+
+  body { font-size: 1.125rem; }
+
+  .topo { padding-top: 3rem; }
+
+  .hero { padding-top: 5rem; }
+
+  .rota li {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1.25rem;
+  }
+  .rota .etapa { flex: 0 0 7rem; }
+  .rota .verbo { flex: 0 0 7rem; margin-top: 0; }
+  .rota .desc { flex: 1 1 auto; margin-top: 0; }
+
+  .foto-reservada {
+    aspect-ratio: 3 / 4;
+    max-width: 22rem;
+  }
+}
+
+/* Impressão: a página deve continuar legível em papel. */
+@media print {
+  .cta { border-color: var(--grafite); color: var(--grafite); background: none; }
+  .rodape { background: none; color: var(--grafite); }
+  .assinatura, .linha-responsa { color: var(--grafite); }
+}
