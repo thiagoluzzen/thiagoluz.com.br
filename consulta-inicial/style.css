@@ -276,10 +276,12 @@ h2.frase.fecho {
 
 /* ---------- quem conduz ---------- */
 
-.foto-reservada {
+.foto-quem {
   width: 100%;
+  height: auto;
   aspect-ratio: 3 / 4;
-  background: var(--areia);
+  object-fit: cover;
+  display: block;
   border: 1px solid rgba(52, 73, 94, 0.14);
   margin-bottom: 2.5rem;
 }
@@ -402,7 +404,7 @@ h2.frase.fecho {
   .rota .verbo { flex: 0 0 7rem; margin-top: 0; }
   .rota .desc { flex: 1 1 auto; margin-top: 0; }
 
-  .foto-reservada {
+  .foto-quem {
     aspect-ratio: 3 / 4;
     max-width: 22rem;
   }
