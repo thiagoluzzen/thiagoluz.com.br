@@ -85,12 +85,18 @@
   .btn.destaque .selo{background:rgba(15,45,58,.1);color:var(--petroleo)}
   .btn.destaque .seta{color:rgba(15,45,58,.5)}
 
-  .btn.realce{
-    background:rgba(185,155,95,.09);
-    border-color:rgba(185,155,95,.42);
+  /* Os dois produtos ESTRUTURA vestem o black premium da marca deles.
+     O contrato-mae diz: "quem ve o petroleo esta com a pessoa; quem ve o preto
+     esta com o programa". Entao o programa aparece em preto DENTRO da pagina da
+     pessoa -- a hierarquia fica visivel sem precisar de rotulo. */
+  .btn.estrutura{
+    background:#0A0A0A;
+    border-color:rgba(247,245,239,.24);
   }
-  .btn.realce:hover{background:rgba(185,155,95,.15);border-color:rgba(185,155,95,.6)}
-  .btn.realce .tit{color:var(--areia)}
+  .btn.estrutura:hover{background:#151515;border-color:rgba(247,245,239,.42)}
+  .btn.estrutura .tit{color:#FFFFFF}
+  .btn.estrutura .sub{color:rgba(247,245,239,.56)}
+  .btn.estrutura .selo{background:rgba(247,245,239,.10);color:#FFFFFF}
 
   .linha1{display:flex;align-items:center;gap:.75rem}
   .tit{flex:1;min-width:0;font-weight:600;font-size:1.0625rem;line-height:1.3}
@@ -151,7 +157,6 @@
   </header>
 
   <nav class="lista">
-
     <a class="btn destaque" href="https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/avaliacao" target="_blank" rel="noopener">
       <span class="linha1">
           <span class="tit">Consulta Inicial</span>
@@ -159,6 +164,24 @@
           <span class="seta">›</span>
         </span>
         <span class="sub">30 a 50 minutos para entender seu momento e indicar o caminho certo.</span>
+      </a>
+
+    <a class="btn estrutura" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%20Luz!%20Quero%20saber%20sobre%20a%20ESTRUTURA%20em%20Grupo." target="_blank" rel="noopener">
+      <span class="linha1">
+          <span class="tit">ESTRUTURA em Grupo</span>
+          <span class="selo"><span class="valor">R$ 100</span><small>por mês</small></span>
+          <span class="seta">›</span>
+        </span>
+        <span class="sub">Encontro semanal, entrada a qualquer momento, sem prazo de permanência.</span>
+      </a>
+
+    <a class="btn estrutura" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%20Luz!%20Quero%20saber%20sobre%20a%20ESTRUTURA%20Individual." target="_blank" rel="noopener">
+      <span class="linha1">
+          <span class="tit">ESTRUTURA Individual</span>
+          <span class="selo"><span class="valor">R$ 500</span><small>por mês</small></span>
+          <span class="seta">›</span>
+        </span>
+        <span class="sub">Duas sessões por mês, com o grupo incluso. Planos mais longos custam menos.</span>
       </a>
 
     <a class="btn" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%20Luz!%20Quero%20saber%20sobre%20o%20Aconselhamento%20Pontual." target="_blank" rel="noopener">
@@ -170,31 +193,13 @@
         <span class="sub">Uma questão específica e delimitada, em 3 sessões.</span>
       </a>
 
-    <a class="btn realce" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%20Luz!%20Quero%20saber%20sobre%20a%20Terapia%20sob%20Medida." target="_blank" rel="noopener">
+    <a class="btn" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%20Luz!%20Quero%20saber%20sobre%20a%20Terapia%20sob%20Medida." target="_blank" rel="noopener">
       <span class="linha1">
           <span class="tit">Terapia sob Medida</span>
           <span class="selo"><small>a partir de</small><span class="valor">R$ 900</span></span>
           <span class="seta">›</span>
         </span>
         <span class="sub">Investiga o padrão de fundo, não uma questão pontual. Pacotes de 3 ou 5 sessões.</span>
-      </a>
-
-    <a class="btn" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%20Luz!%20Quero%20saber%20sobre%20a%20ESTRUTURA%20em%20Grupo." target="_blank" rel="noopener">
-      <span class="linha1">
-          <span class="tit">ESTRUTURA em Grupo</span>
-          <span class="selo"><span class="valor">R$ 100</span><small>por mês</small></span>
-          <span class="seta">›</span>
-        </span>
-        <span class="sub">Encontro semanal, entrada a qualquer momento, sem prazo de permanência.</span>
-      </a>
-
-    <a class="btn" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%20Luz!%20Quero%20saber%20sobre%20a%20ESTRUTURA%20Individual." target="_blank" rel="noopener">
-      <span class="linha1">
-          <span class="tit">ESTRUTURA Individual</span>
-          <span class="selo"><small>a partir de</small><span class="valor">R$ 400/mês</span></span>
-          <span class="seta">›</span>
-        </span>
-        <span class="sub">Duas sessões por mês, com o grupo incluso. R$ 500 avulso, menos nos planos.</span>
       </a>
 
     <a class="btn" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%20Luz!%20Quero%20saber%20sobre%20uma%20sess%C3%A3o%20avulsa." target="_blank" rel="noopener">
@@ -225,6 +230,10 @@
         </span>
         <span class="sub">Aulas abertas com terapeutas, educadores e mentores. Uma por semana.</span>
       </a>
+
+    
+
+    
 
   </nav>
 
