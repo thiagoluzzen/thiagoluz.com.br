@@ -58,14 +58,18 @@
 
   /* ── botões ── */
   .lista{display:flex;flex-direction:column;gap:.6875rem;margin-bottom:2rem}
+  /* Duas linhas, de propósito. Com o selo ao lado do texto, a descrição ficava
+     numa coluna de metade da largura e quebrava em ate 6 linhas no celular --
+     e o titulo "Hipnoterapia e Constelacao" quebrava em duas. Agora o preco
+     divide a linha com o titulo, e a descricao usa a largura inteira. */
   .btn{
-    display:flex;align-items:center;gap:.875rem;
+    display:flex;flex-direction:column;gap:.375rem;
     background:rgba(247,245,239,.06);
     border:1px solid var(--linha);
     border-radius:10px;
     padding:1.125rem 1.25rem;
     text-decoration:none;color:var(--quente);
-    min-height:3.5rem;
+    min-height:3.5rem;align-items:stretch;
     transition:background .15s,border-color .15s;
   }
   .btn:hover{background:rgba(247,245,239,.11);border-color:rgba(247,245,239,.3)}
@@ -88,14 +92,14 @@
   .btn.realce:hover{background:rgba(185,155,95,.15);border-color:rgba(185,155,95,.6)}
   .btn.realce .tit{color:var(--areia)}
 
-  .corpo{flex:1;min-width:0}
-  .tit{display:block;font-weight:600;font-size:1.0625rem;line-height:1.35}
+  .linha1{display:flex;align-items:center;gap:.75rem}
+  .tit{flex:1;min-width:0;font-weight:600;font-size:1.0625rem;line-height:1.3}
   .sub{
     display:block;font-size:.9375rem;color:var(--suave);
-    line-height:1.4;margin-top:.1875rem;
+    line-height:1.45;
   }
   .selo{
-    flex:none;font-size:.9375rem;font-weight:600;
+    flex:none;font-size:.9375rem;font-weight:600;align-self:flex-start;
     background:rgba(185,155,95,.18);color:var(--dourado);
     padding:.375rem .625rem;border-radius:5px;
     white-space:nowrap;text-align:center;line-height:1.3;
@@ -107,7 +111,7 @@
     opacity:.75;letter-spacing:.01em;margin-bottom:.0625rem;
   }
   .selo .valor{display:block;font-size:.9375rem}
-  .seta{flex:none;color:rgba(247,245,239,.35);font-size:1.125rem;line-height:1}
+  .seta{flex:none;color:rgba(247,245,239,.35);font-size:1.125rem;line-height:1;align-self:center}
 
   .divisoria{
     display:flex;align-items:center;gap:.875rem;
@@ -149,78 +153,78 @@
   <nav class="lista">
 
     <a class="btn destaque" href="https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/avaliacao" target="_blank" rel="noopener">
-      <span class="corpo">
-        <span class="tit">Consulta Inicial</span>
+      <span class="linha1">
+          <span class="tit">Consulta Inicial</span>
+          <span class="selo">sem custo</span>
+          <span class="seta">›</span>
+        </span>
         <span class="sub">30 a 50 minutos para entender seu momento e indicar o caminho certo.</span>
-      </span>
-      <span class="selo">sem custo</span>
-      <span class="seta">›</span>
-    </a>
+      </a>
 
     <a class="btn" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%20Luz!%20Quero%20saber%20sobre%20o%20Aconselhamento%20Pontual." target="_blank" rel="noopener">
-      <span class="corpo">
-        <span class="tit">Aconselhamento Pontual</span>
+      <span class="linha1">
+          <span class="tit">Aconselhamento Pontual</span>
+          <span class="selo">R$ 450</span>
+          <span class="seta">›</span>
+        </span>
         <span class="sub">Uma questão específica e delimitada, em 3 sessões.</span>
-      </span>
-      <span class="selo">R$ 450</span>
-      <span class="seta">›</span>
-    </a>
+      </a>
 
     <a class="btn realce" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%20Luz!%20Quero%20saber%20sobre%20a%20Terapia%20sob%20Medida." target="_blank" rel="noopener">
-      <span class="corpo">
-        <span class="tit">Terapia sob Medida</span>
-        <span class="sub">Investiga e muda o padrão de fundo, não uma questão pontual. Pacote de 3 ou 5 sessões, com hipnoterapia e constelação inclusas.</span>
-      </span>
-      <span class="selo"><small>a partir de</small><span class="valor">R$ 900</span></span>
-      <span class="seta">›</span>
-    </a>
+      <span class="linha1">
+          <span class="tit">Terapia sob Medida</span>
+          <span class="selo"><small>a partir de</small><span class="valor">R$ 900</span></span>
+          <span class="seta">›</span>
+        </span>
+        <span class="sub">Investiga o padrão de fundo, não uma questão pontual. Pacotes de 3 ou 5 sessões.</span>
+      </a>
 
     <a class="btn" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%20Luz!%20Quero%20saber%20sobre%20a%20ESTRUTURA%20em%20Grupo." target="_blank" rel="noopener">
-      <span class="corpo">
-        <span class="tit">ESTRUTURA em Grupo</span>
+      <span class="linha1">
+          <span class="tit">ESTRUTURA em Grupo</span>
+          <span class="selo"><span class="valor">R$ 100</span><small>por mês</small></span>
+          <span class="seta">›</span>
+        </span>
         <span class="sub">Encontro semanal, entrada a qualquer momento, sem prazo de permanência.</span>
-      </span>
-      <span class="selo"><span class="valor">R$ 100</span><small>por mês</small></span>
-      <span class="seta">›</span>
-    </a>
+      </a>
 
     <a class="btn" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%20Luz!%20Quero%20saber%20sobre%20a%20ESTRUTURA%20Individual." target="_blank" rel="noopener">
-      <span class="corpo">
-        <span class="tit">ESTRUTURA Individual</span>
-        <span class="sub">Acompanhamento contínuo, duas sessões por mês, com o grupo incluso. R$ 500 sem compromisso, menos nos planos por período.</span>
-      </span>
-      <span class="selo"><small>a partir de</small><span class="valor">R$ 400/mês</span></span>
-      <span class="seta">›</span>
-    </a>
+      <span class="linha1">
+          <span class="tit">ESTRUTURA Individual</span>
+          <span class="selo"><small>a partir de</small><span class="valor">R$ 400/mês</span></span>
+          <span class="seta">›</span>
+        </span>
+        <span class="sub">Duas sessões por mês, com o grupo incluso. R$ 500 avulso, menos nos planos.</span>
+      </a>
 
     <a class="btn" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%20Luz!%20Quero%20saber%20sobre%20uma%20sess%C3%A3o%20avulsa." target="_blank" rel="noopener">
-      <span class="corpo">
-        <span class="tit">Hipnoterapia e Constelação</span>
-        <span class="sub">Sessão avulsa, quando o processo pede. R$ 297 para quem assina.</span>
-      </span>
-      <span class="selo">R$ 350</span>
-      <span class="seta">›</span>
-    </a>
+      <span class="linha1">
+          <span class="tit">Hipnoterapia e Constelação</span>
+          <span class="selo">R$ 350</span>
+          <span class="seta">›</span>
+        </span>
+        <span class="sub">Sessão avulsa, quando o processo pede. R$ 297 para quem assina.</span>
+      </a>
 
     <div class="divisoria">gratuito</div>
 
     <a class="btn" href="https://chat.whatsapp.com/ExkqaaqVKx90bYWJnLw5Kr" target="_blank" rel="noopener">
-      <span class="corpo">
-        <span class="tit">Grupo de Constelações</span>
+      <span class="linha1">
+          <span class="tit">Grupo de Constelações</span>
+          <span class="selo">entrar</span>
+          <span class="seta">›</span>
+        </span>
         <span class="sub">Participe dos encontros e aprenda com a técnica.</span>
-      </span>
-      <span class="selo">entrar</span>
-      <span class="seta">›</span>
-    </a>
+      </a>
 
     <a class="btn" href="https://chat.whatsapp.com/KT4L11rmhZI97SAIooN8Qn" target="_blank" rel="noopener">
-      <span class="corpo">
-        <span class="tit">Escola de Consciências</span>
+      <span class="linha1">
+          <span class="tit">Escola de Consciências</span>
+          <span class="selo">entrar</span>
+          <span class="seta">›</span>
+        </span>
         <span class="sub">Aulas abertas com terapeutas, educadores e mentores. Uma por semana.</span>
-      </span>
-      <span class="selo">entrar</span>
-      <span class="seta">›</span>
-    </a>
+      </a>
 
   </nav>
 
