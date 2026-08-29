@@ -7,7 +7,7 @@
 <meta name="description" content="Uma conversa de diagnóstico com o Thiago Luz para quem já entende o próprio padrão e continua dentro dele.">
 <meta name="robots" content="noindex">
 <!-- noindex: página de campanha paga. Remover se o Thiago decidir indexá-la. -->
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 <!-- [PREENCHER: pixel] — o código do pixel entra aqui, antes de </head>. Ver especificacao-tecnica.md -->
 </head>
 <body>
@@ -34,10 +34,10 @@
         mais entendimento. É estrutura.</p>
       <p class="destaque">Ela não tem custo.</p>
     <p class="acao">
-      <a class="cta" data-cta="hero" href="https://wa.me/5534984309000?text=Quero%20marcar%20minha%20Consulta%20Inicial%20%5BCI-ORG%5D">Marcar minha Consulta Inicial</a>
-        <a class="cta-sec" data-cta="hero-agenda" href="https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/avaliacao">Prefere marcar sozinho? Escolha o horário na agenda.</a>
+      <a class="cta" data-cta="hero-agenda" href="https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/avaliacao">Marcar minha Consulta Inicial</a>
+        <a class="cta-sec" data-cta="hero-whats" href="https://wa.me/5534984309000?text=Quero%20marcar%20minha%20Consulta%20Inicial%20%5BCI-ORG%5D">Prefere conversar antes? Me chama no WhatsApp.</a>
     </p>
-    <p class="nota-acao">Me chama no WhatsApp, ou escolha um horário direto na agenda — os dois caem comigo.</p>
+    <p class="nota-acao">Você escolhe o horário e pronto. Se preferir combinar comigo antes, é só chamar no WhatsApp.</p>
   </section>
 
   <!-- 2. QUEM É ISTO PARA — copy §2 (absorve o antigo bloco "espelho") -->
@@ -98,8 +98,8 @@
       você está parado. É de lá que o trabalho continua.</p>
 
     <ol class="passos">
-      <li>Você me chama no WhatsApp ou escolhe um horário direto na agenda.</li>
-      <li>Se for pelo WhatsApp, eu faço três perguntas rápidas antes de marcar. Se for pela agenda, você já marca direto.</li>
+      <li>Você escolhe um horário direto na agenda, ou me chama no WhatsApp.</li>
+      <li>Pela agenda você já marca direto. Pelo WhatsApp, eu faço três perguntas rápidas antes de marcar.</li>
       <li>A gente conversa, e você sai com o diagnóstico e o próximo passo.</li>
     </ol>
   </section>
@@ -107,8 +107,8 @@
   <!-- 5. CTA INTERMEDIÁRIO — mesmo botão, mesmo texto, mesmo destino -->
   <section class="secao acao-meio">
     <p class="acao">
-      <a class="cta" data-cta="meio" href="https://wa.me/5534984309000?text=Quero%20marcar%20minha%20Consulta%20Inicial%20%5BCI-ORG%5D">Marcar minha Consulta Inicial</a>
-        <a class="cta-sec" data-cta="meio-agenda" href="https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/avaliacao">Prefere marcar sozinho? Escolha o horário na agenda.</a>
+      <a class="cta" data-cta="meio-agenda" href="https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/avaliacao">Marcar minha Consulta Inicial</a>
+        <a class="cta-sec" data-cta="meio-whats" href="https://wa.me/5534984309000?text=Quero%20marcar%20minha%20Consulta%20Inicial%20%5BCI-ORG%5D">Prefere conversar antes? Me chama no WhatsApp.</a>
     </p>
   </section>
 
@@ -157,11 +157,11 @@
     <h2 class="frase fecho">Você não precisa de mais uma explicação sobre você.</h2>
     <p class="texto">Precisa saber onde a sua estrutura trava — e o que fazer a
       partir dali.</p>
-    <p class="texto">A conversa é gratuita e acontece direto comigo — pelo
-      WhatsApp ou no horário que você escolher na agenda.</p>
+    <p class="texto">A conversa é gratuita e acontece direto comigo — no horário que
+      você escolher na agenda, ou combinada pelo WhatsApp.</p>
     <p class="acao">
-      <a class="cta" data-cta="final" href="https://wa.me/5534984309000?text=Quero%20marcar%20minha%20Consulta%20Inicial%20%5BCI-ORG%5D">Marcar minha Consulta Inicial</a>
-        <a class="cta-sec" data-cta="final-agenda" href="https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/avaliacao">Prefere marcar sozinho? Escolha o horário na agenda.</a>
+      <a class="cta" data-cta="final-agenda" href="https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/avaliacao">Marcar minha Consulta Inicial</a>
+        <a class="cta-sec" data-cta="final-whats" href="https://wa.me/5534984309000?text=Quero%20marcar%20minha%20Consulta%20Inicial%20%5BCI-ORG%5D">Prefere conversar antes? Me chama no WhatsApp.</a>
     </p>
   </section>
 
@@ -178,12 +178,12 @@
 
      O QUE FAZ: lê `utm_content` da URL (nome do anúncio, que o Meta preenche),
      traduz para um código de origem da lista fechada e reescreve o `?text=`
-     dos três botões. Assim o Thiago recebe "Quero marcar minha Consulta
+     dos três links de WhatsApp. Assim o Thiago recebe "Quero marcar minha Consulta
      Inicial [CI-LP-A2]" e sabe qual anúncio trouxe a pessoa.
 
      DEGRADAÇÃO SEGURA: sem JavaScript, o `href` estático do HTML já leva ao
      WhatsApp com o código CI-ORG (origem não identificada). O script só
-     enriquece; ele nunca é condição para o botão funcionar.
+     enriquece; ele nunca é condição para o link funcionar.
 
      SEGURANÇA: o valor da query string NUNCA entra no link. Ele é apenas
      comparado contra uma lista fechada; o que sai é sempre um dos cinco
@@ -247,7 +247,12 @@
   }
 
   var link = montarLink(lerCodigo());
-  var botoes = document.querySelectorAll("a.cta");
+  /* O seletor mira o CANAL, nao o papel visual. Ate 28/08/2026 era "a.cta" --
+     a classe do botao preenchido. Naquele dia o botao passou a ser o
+     agendamento e o WhatsApp virou a linha de baixo: o seletor antigo teria
+     sobrescrito o link da agenda com o do WhatsApp, calado, desfazendo a
+     troca e perdendo o codigo de campanha. Papel visual muda; canal nao. */
+  var botoes = document.querySelectorAll('a[data-cta$="-whats"]');
   for (var i = 0; i < botoes.length; i++) {
     botoes[i].setAttribute("href", link);
   }
