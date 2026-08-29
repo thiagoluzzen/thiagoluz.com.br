@@ -13,7 +13,7 @@
 
 :root {
   /* Paleta oficial — §6.3. Nenhuma cor fora desta lista. */
-  --petroleo:   #0F2D3A;  /* predominante */
+  --petroleo:   #0C1F3D;  /* predominante */
   --ardosia:    #34495E;
   --areia:      #D8CFC0;
   --branco:     #F7F5EF;  /* branco quente */
@@ -416,3 +416,21 @@ h2.frase.fecho {
   .rodape { background: none; color: var(--grafite); }
   .assinatura, .linha-responsa { color: var(--grafite); }
 }
+
+/* Segunda opcao de agendamento -- 28/08/2026.
+   Ate aqui a landing so oferecia WhatsApp, e o autoagendamento do portal (que
+   existe e responde 200) nao aparecia em lugar nenhum. Quem chegava pela bio
+   perdia o caminho de marcar sozinho a oferta de entrada, que e gratuita.
+   O botao continua sendo o WhatsApp: e o destino da campanha paga em curso, e
+   trocar o CTA principal de campanha rodando e outra decisao. O agendamento
+   entra como segunda linha, na mesma gramatica das cinco paginas de produto. */
+.cta-sec {
+  display: block;
+  margin-top: 0.9rem;
+  color: var(--petroleo);
+  font-size: 0.9375rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cta-sec:hover,
+.cta-sec:focus-visible { color: var(--grafite); }
