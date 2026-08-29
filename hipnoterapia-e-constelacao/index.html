@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hipnoterapia e Constelação Familiar — Thiago Luz</title>
+<meta name="description" content="Sessão avulsa de Hipnoterapia ou Constelação Familiar Sistêmica, para quem já sabe o que precisa ou já está em acompanhamento com Thiago Luz.">
+<!--
+  PÁGINA DE PRODUTO 5/6 — Hipnoterapia e Constelação Familiar Sistêmica (satélites).
+  thiagoluz.com.br/hipnoterapia-e-constelacao/
+  Herda o esqueleto de thiagoluz.com.br/consulta-inicial/ (6 blocos), como as
+  demais desta série (PLANO.md), com dois afastamentos deliberados — ver abaixo.
+
+  COR: petróleo da marca pessoal (#0F2D3A), não black premium. Este produto não
+  é ESTRUTURA — regra do BRIEFING-COMUM.md ("quem vê o petróleo está com a
+  pessoa; quem vê o preto está com o programa").
+
+  PREÇO — conferido em ~/claude/marca/OFERTAS-E-ROTINA.md em 28/08/2026:
+  avulsa R$ 350, R$ 297 para quem assina ESTRUTURA Individual ou ESTRUTURA em
+  Grupo — "o único desconto de assinante que existe" na escada, confirmado na
+  fonte e no portal. Rótulo é "por sessão", nunca "por mês" (o auditor já
+  marcou esse erro no molde de outra página — não repetir aqui).
+
+  ONDE ESTA PÁGINA SE AFASTA DO MOLDE, e por quê:
+  1. DOIS PRODUTOS, UM CHECKOUT. O portal vende Hipnoterapia e Constelação como
+     dois itens de catálogo, mas o checkout testado nesta tarefa é um único
+     link (/agendar/avulsa, HTTP 200). Em vez de fingir que a página resolve
+     sozinha "qual das duas", o bloco 3 nomeia as duas, explica que a escolha
+     não precisa ser feita sozinho a partir de um anúncio, e manda as duas ao
+     mesmo botão — quem já sabe escolhe lá, quem não sabe ainda assim entra
+     na conversa certa. Não virou duas páginas grudadas: é uma pergunta
+     (para quem é isto) com uma bifurcação dentro do bloco 3, não uma seção 3
+     inteira duplicada.
+  2. QUALIFICAÇÃO ANTES DO CTA, não em vez dele. Este é o satélite mais
+     delicado da escada (fato #14 do briefing desta tarefa): comprado dentro
+     de um processo em curso, ou avulso por quem já sabe o que quer — nunca a
+     porta de entrada. O bloco 2 nomeia explicitamente para quem isto NÃO é
+     (quem chega sem saber por onde começar) e aponta, em texto corrido, sem
+     botão, para thiagoluz.com.br/consulta-inicial/ — que já está no ar. Não
+     vira um segundo CTA: é link sublinhado dentro do parágrafo, não um
+     bloco competindo por clique. O CTA de compra permanece único e continua
+     no hero, porque quem sabe o que quer não deveria ter que rolar a página
+     inteira para confirmar que pode comprar.
+
+  GARANTIA DE 7 DIAS -- resolvido em 28/08/2026, depois de medir. O
+  OFERTAS-E-ROTINA.md declara a garantia como REGRA GERAL do catalogo, na
+  secao de pagamento, e nao produto a produto: "7 dias corridos sobre o valor
+  pago (arrependimento de compra a distancia)". E o direito do CDC art. 49,
+  que vale para toda compra a distancia independente do que a pagina diga.
+  As outras quatro paginas desta serie ja declaram; pagina calada faria
+  parecer que satelite nao tem.
+
+  DIVERGENCIA A FECHAR NO PORTAL: o checkout so declara a garantia nos tres
+  produtos ESTRUTURA -- nao em Terapia sob Medida, nem no Aconselhamento, nem
+  nos satelites. As duas vitrines discordam, e quem corrige e o portal, porque
+  a garantia existe por lei nos dois lugares.
+
+  MECANISMO DA HIPNOTERAPIA: o portal não descreve o mecanismo da técnica em
+  nenhum texto já publicado (só cita "Hipnose Clínica" como especialidade,
+  sem frase de mecanismo, ao contrário da Constelação, que tem uma frase
+  pronta: "um olhar sistêmico sobre lealdades e padrões de família que se
+  repetem na vida adulta"). Para não inventar clínica, a frase sobre
+  hipnoterapia nesta página fica deliberadamente no nível do que a técnica
+  FAZ enquanto ferramenta (atenção focada e relaxamento guiado, para
+  trabalhar reação automática que a conversa em estado desperto não alcança
+  sozinha) — sem termo da lista proibida (nada de "estado alterado",
+  "energia", "inconsciente coletivo" etc.) e sem alegar mecanismo que
+  nenhuma fonte assinou. Se o Thiago tiver uma frase própria e já usada em
+  atendimento, ela deveria substituir esta.
+
+  HEADLINE — 3 variações para teste, framework nomeado:
+  A (ESCOLHIDA) — PAS, consciência 2 (já sente a dor de "entender e não
+     conseguir destravar o padrão"; não conhece hipnoterapia/constelação
+     como resposta a isso): "Você já entendeu o padrão. Ele continua se
+     repetindo do mesmo jeito."
+  B — BAB: "Da compreensão à mudança tem uma distância que a conversa
+     sozinha não cobre. Hipnoterapia e constelação são duas pontes
+     diferentes para atravessar essa distância."
+  C — AIDA (Atenção), consciência 1, para quem nunca ouviu falar das duas
+     técnicas: "Existem duas ferramentas específicas para quando entender
+     não muda nada."
+  A venceu: é a única que nomeia a dor sem citar as técnicas, o que evita
+  prometer a ferramenta certa antes de qualificar (bloco 2) qual delas cabe
+  — e "entendeu e o padrão continua" é a mesma tese da marca (§ CLAUDE.md),
+  só que na escala de um padrão específico, não da vida inteira.
+-->
+<style>
+:root{
+  /* Paleta da marca pessoal — BRIEFING-COMUM.md. Nenhuma cor fora desta lista. */
+  --fundo:    #0F2D3A; /* petróleo — base */
+  --camada:   #17394A; /* petróleo mais claro — caixas, nunca texto */
+  --corpo:    #D8CFC0; /* bege areia — corpo de texto */
+  --dourado:  #B99B5F; /* valor: preço, marcador, CTA */
+  --branco:   #F7F5EF; /* branco quente — títulos e lettering */
+
+  --titulo: "League Spartan","Manrope","Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --texto:  "Inter","IBM Plex Sans","Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+
+  --coluna: 34rem;
+  --margem: 1.5rem;
+  --ar: 4.5rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--fundo);
+  color:var(--corpo);
+  font-family:var(--texto);
+  font-size:1.0625rem;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.pular{position:absolute;left:-9999px}
+.pular:focus{position:static;display:block;padding:.75rem var(--margem);background:var(--dourado);color:var(--fundo)}
+:focus-visible{outline:2px solid var(--dourado);outline-offset:3px}
+
+.topo{padding:2rem var(--margem) 0}
+.marca{
+  margin:0;font-family:var(--titulo);font-size:.75rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--corpo);font-weight:600;
+}
+.marca strong{color:var(--branco)}
+.sep{color:rgba(216,207,192,.4);padding:0 .3em}
+
+.secao{max-width:var(--coluna);margin:0 auto;padding:var(--ar) var(--margem)}
+.secao+.secao{border-top:1px solid rgba(216,207,192,.16)}
+
+h1,h2{font-family:var(--titulo);font-weight:700;color:var(--branco);margin:0}
+h1{font-size:clamp(1.9rem,8vw,2.7rem);line-height:1.2;letter-spacing:-.01em}
+h2.frase{
+  font-size:clamp(1.4rem,5.2vw,1.85rem);line-height:1.3;letter-spacing:-.005em;
+  color:var(--branco);margin-bottom:1.5rem;text-transform:none;
+}
+h2.frase.fecho{font-size:clamp(1.6rem,6vw,2.1rem)}
+h3.tecnica{font-family:var(--titulo);font-size:1.05rem;font-weight:700;color:var(--branco);margin:0 0 .5rem}
+
+.texto{margin:0 0 1.4rem;color:var(--corpo)}
+.texto:last-child{margin-bottom:0}
+.link-inline{color:var(--branco);text-decoration:underline;text-underline-offset:3px}
+.link-inline:hover,.link-inline:focus-visible{color:var(--dourado)}
+
+.destaque{
+  font-family:var(--titulo);font-size:1.25rem;line-height:1.5;font-weight:500;
+  color:var(--branco);margin:0 0 1.4rem;padding-left:1.25rem;
+  border-left:2px solid var(--dourado);
+}
+
+.hero{padding-top:3rem}
+.hero .sub{margin:1.5rem 0 0;font-size:1.0625rem;color:var(--corpo);max-width:30rem}
+.acao{margin:2.25rem 0 0}
+
+.cta{
+  display:inline-block;background:var(--dourado);color:#1A1004;
+  font-family:var(--titulo);font-size:1rem;font-weight:700;letter-spacing:.01em;
+  text-decoration:none;padding:1.05rem 1.75rem;border-radius:2px;min-height:3rem;
+  border:1px solid var(--dourado);transition:background-color 160ms ease,color 160ms ease;
+}
+.cta:hover,.cta:focus-visible{background:transparent;color:var(--dourado)}
+@media (prefers-reduced-motion:reduce){.cta{transition:none}}
+
+.cta-sec{
+  display:block;margin-top:1rem;color:var(--corpo);font-size:.9375rem;
+  text-decoration:underline;text-underline-offset:3px;
+}
+.cta-sec:hover,.cta-sec:focus-visible{color:var(--branco)}
+
+.filtro{list-style:none;margin:2rem 0 0;padding:0}
+.filtro li{color:var(--corpo);padding:.8rem 0;border-top:1px solid rgba(216,207,192,.16)}
+.filtro li:last-child{border-bottom:1px solid rgba(216,207,192,.16)}
+.filtro .nao::before{content:"Não é para quem ";color:var(--corpo);font-weight:600}
+.filtro .sim::before{content:"É para quem ";color:var(--dourado);font-weight:600}
+
+.tecnicas{list-style:none;margin:1.75rem 0 0;padding:0}
+.tecnicas li{padding:1.25rem 0;border-top:1px solid rgba(216,207,192,.16)}
+.tecnicas li:last-child{border-bottom:1px solid rgba(216,207,192,.16)}
+
+.logistica{list-style:none;margin:1.5rem 0 2rem;padding:0}
+.logistica li{
+  display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0;
+  border-top:1px solid rgba(216,207,192,.16);
+}
+.logistica li:last-child{border-bottom:1px solid rgba(216,207,192,.16)}
+.logistica .rotulo{color:var(--corpo);font-size:.9375rem}
+.logistica .valor{color:var(--branco);font-family:var(--titulo);font-weight:600;text-align:right}
+
+.preco-caixa{
+  background:var(--camada);border:1px solid rgba(185,155,95,.35);border-radius:4px;
+  padding:1.5rem 1.5rem;margin:1.75rem 0 0;
+}
+.preco-valor{font-family:var(--titulo);color:var(--dourado);font-size:2rem;font-weight:700;line-height:1}
+.preco-unidade{color:var(--corpo);font-size:.875rem;margin-top:.25rem}
+.preco-nota{color:var(--corpo);font-size:.875rem;margin-top:1rem;line-height:1.6}
+
+.quem .nome{font-size:1.5rem;color:var(--branco);font-weight:700;margin-bottom:.3rem}
+.titulo{margin:0 0 1.5rem;font-family:var(--titulo);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dourado)}
+.ancora{margin:0 0 2rem;padding-left:1.25rem;border-left:2px solid var(--dourado)}
+.ancora p{margin:0;font-family:var(--titulo);font-size:1.0625rem;line-height:1.6;color:var(--branco);font-weight:500}
+.linha-responsa{margin:1.75rem 0 0;font-size:.875rem;line-height:1.6;color:rgba(216,207,192,.7)}
+
+.fechamento{padding-bottom:calc(var(--ar) + .75rem)}
+
+.rodape{background:var(--fundo);color:var(--corpo);padding:2.5rem var(--margem);border-top:1px solid rgba(216,207,192,.16)}
+.rodape>*{max-width:var(--coluna);margin-left:auto;margin-right:auto}
+.assinatura{margin:0;font-family:var(--titulo);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(216,207,192,.7)}
+
+@media (min-width:46rem){
+  :root{--margem:2.5rem;--ar:6rem}
+  body{font-size:1.125rem}
+  .hero{padding-top:4.5rem}
+  .logistica li{flex-direction:row}
+}
+@media print{
+  body{background:#fff;color:#111}
+  .cta{background:#111;color:#fff;border-color:#111}
+}
+.foto-quem{
+  width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;display:block;
+  border:1px solid rgba(247,245,239,.14);margin:0 auto 2.5rem;max-width:22rem;
+}
+</style>
+</head>
+<body>
+
+<a class="pular" href="#agendar">Ir para a inscrição</a>
+
+<header class="topo">
+  <p class="marca"><strong>Hipnoterapia</strong> e Constelação Familiar Sistêmica <span class="sep">·</span> sessão avulsa</p>
+</header>
+
+<main>
+
+  <!-- 1. HERO — dor pelo mecanismo, sem nomear as técnicas ainda.
+       Framework: PAS, consciência 2. Ver nota de headline no topo do arquivo. -->
+  <section class="secao hero">
+    <h1>Você já entendeu o padrão. Ele continua se repetindo do mesmo jeito.</h1>
+    <p class="sub">Nomear o que acontece não é o mesmo que destravar o que acontece.
+      Existem duas ferramentas específicas para esse ponto exato — diferentes de
+      uma conversa terapêutica comum, e diferentes entre si. A sessão é avulsa:
+      60 a 90 minutos, comprada quando você já sabe que precisa dela.</p>
+    <p class="acao">
+      <a class="cta" data-cta="hero" href="https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/avulsa">Agendar sessão avulsa</a>
+      <a class="cta-sec" data-cta="hero-sec" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%21%20Quero%20entender%20se%20uma%20sess%C3%A3o%20de%20hipnoterapia%20ou%20constela%C3%A7%C3%A3o%20serve%20para%20o%20meu%20caso.">Não sabe qual das duas? Fala comigo no WhatsApp.</a>
+    </p>
+  </section>
+
+  <!-- 2. PARA QUEM — bloco que carrega a qualificação de satélite. Redireciona
+       quem chega sem processo nenhum para a Consulta Inicial, em texto
+       corrido (não é um segundo CTA competindo — ver nota de governança). -->
+  <section class="secao para-quem">
+    <h2 class="frase">Isto é um instrumento, não uma porta de entrada.</h2>
+    <p class="texto">Sessão avulsa serve quem já sabe o que precisa: um processo
+      em curso — Terapia sob Medida, ESTRUTURA Individual ou ESTRUTURA em Grupo —
+      que pede especificamente uma dessas duas técnicas, ou alguém que já
+      trabalhou com hipnoterapia e constelação antes e reconhece que é disso
+      que precisa agora.</p>
+    <p class="destaque">Se você não faz ideia de qual ferramenta usar, ou nunca
+      conversou comigo antes, o caminho certo não é comprar uma sessão avulsa —
+      é a <a class="link-inline" href="https://thiagoluz.com.br/consulta-inicial/">Consulta Inicial, sem custo</a>,
+      que existe exatamente para isso: entender onde você está travado e
+      indicar o caminho certo a partir daí.</p>
+
+    <ul class="filtro">
+      <li class="sim">está em acompanhamento comigo e o processo pediu uma dessas técnicas.</li>
+      <li class="sim">já conhece as duas e sabe qual delas cabe no que está enfrentando agora.</li>
+      <li class="nao">está chegando agora, sem processo nenhum em curso — comece pela Consulta Inicial.</li>
+      <li class="nao">busca uma resposta rápida para uma crise em curso — isso pede atendimento contínuo, não sessão avulsa.</li>
+    </ul>
+  </section>
+
+  <!-- 3. AS DUAS TÉCNICAS — bifurcação dentro de um único bloco, não duas
+       páginas grudadas. Mecanismo de cada uma; ver nota sobre a fonte do
+       texto de hipnoterapia (não publicado, ao contrário do de constelação). -->
+  <section class="secao tecnica">
+    <h2 class="frase">Duas ferramentas diferentes. Uma decisão que não precisa ser sua sozinho.</h2>
+    <p class="texto">O nome da técnica certa quase nunca vem antes da conversa —
+      vem depois dela. Por isso as duas entram no mesmo agendamento: você diz o
+      que está enfrentando, e a técnica se decide ali, comigo, não num anúncio.</p>
+
+    <ul class="tecnicas">
+      <li>
+        <h3 class="tecnica">Hipnoterapia</h3>
+        <p class="texto">Trabalho com atenção focada e relaxamento guiado para
+          chegar em reação automática e resposta condicionada que a conversa
+          em estado desperto não alcança sozinha — o tipo de coisa que você já
+          entendeu com a cabeça e o corpo continua fazendo do mesmo jeito.</p>
+      </li>
+      <li>
+        <h3 class="tecnica">Constelação Familiar Sistêmica</h3>
+        <p class="texto">Um olhar sistêmico sobre lealdades e padrões de
+          família que se repetem na vida adulta — quando o que trava não é
+          só seu, é um arranjo que atravessou gerações antes de chegar em
+          você.</p>
+      </li>
+    </ul>
+
+    <ul class="logistica">
+      <li><span class="rotulo">Duração</span><span class="valor">60 a 90 min</span></li>
+      <li><span class="rotulo">Formato</span><span class="valor">individual</span></li>
+      <li><span class="rotulo">Vínculo</span><span class="valor">avulsa, sem pacote</span></li>
+    </ul>
+  </section>
+
+  <!-- 4. ONDE ENTRA NO ROTA — satélite, não substitui o percurso. -->
+  <section class="secao metodo">
+    <h2 class="frase">Isto entra dentro do Método ROTA. Não substitui percorrê-lo.</h2>
+    <p class="texto">O Método ROTA — Raiz, Ordem, Tônus, Ação — é o percurso.
+      Hipnoterapia e constelação são ferramentas que entram nesse percurso
+      quando um ponto específico pede um instrumento diferente de conversa:
+      geralmente na Raiz, para chegar onde entender sozinho não chegou, ou no
+      Tônus, para destravar uma reação que se repete apesar da clareza.</p>
+    <p class="texto">Por isso vivem melhor dentro de um acompanhamento —
+      individual, em grupo ou no pacote fechado da Terapia sob Medida — do que
+      soltas. Avulsas, seguem servindo quem já sabe exatamente o que está
+      buscando.</p>
+  </section>
+
+  <!-- 5. QUEM CONDUZ — mesmos fatos já publicados na landing da Consulta
+       Inicial e no molde de ESTRUTURA em Grupo. Nenhum fato novo. -->
+  <section class="secao quem">
+    <img class="foto-quem" src="thiago-consultorio-v2.webp"
+         alt="Thiago Luz em seu consultório" width="815" height="1086" loading="lazy">
+
+    <h2 class="nome">Thiago Luz</h2>
+    <p class="titulo">Arquiteto de Vidas</p>
+
+    <blockquote class="ancora">
+      <p>Tem muita gente que se entende, mas não consegue construir a própria
+        vida. O meu trabalho é ajudar essa pessoa a arquitetar a própria
+        vida.</p>
+    </blockquote>
+
+    <p class="texto">Sou psicoterapeuta e conduzo a Escola de Consciências,
+      onde atendo com psicoterapia, hipnoterapia, constelação e mentoria —
+      sempre dentro do Método ROTA, que eu construí no atendimento, não na
+      teoria. Atendo desde 2018.</p>
+
+    <p class="linha-responsa">Este trabalho não substitui acompanhamento
+      médico ou psicológico.</p>
+  </section>
+
+  <!-- 6. FECHAMENTO — preço por sessão (nunca "por mês" — regra do auditor
+       para produto avulso), o único desconto de assinante da escada, CTA. -->
+  <section class="secao fechamento" id="agendar">
+    <h2 class="frase fecho">R$ 350 a sessão. R$ 297 para quem já assina comigo.</h2>
+
+    <div class="preco-caixa">
+      <p class="preco-valor">R$ 350<span class="preco-unidade" style="display:block">por sessão</span></p>
+      <p class="preco-nota">Quem assina a ESTRUTURA Individual ou a ESTRUTURA
+        em Grupo paga R$ 297 — é o único desconto de assinante que existe
+        nesta escada inteira.</p>
+      <p class="preco-nota">E há garantia de 7 dias corridos sobre o valor pago: se não for para você, o dinheiro volta.</p>
+    </div>
+
+    <p class="texto">Sem pacote, sem prazo de permanência: você agenda quando
+      o processo pede, e decide ali, comigo, qual das duas técnicas cabe.</p>
+
+    <p class="acao">
+      <a class="cta" data-cta="final" href="https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/avulsa">Agendar sessão avulsa</a>
+      <a class="cta-sec" data-cta="final-sec" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%21%20Quero%20entender%20se%20uma%20sess%C3%A3o%20de%20hipnoterapia%20ou%20constela%C3%A7%C3%A3o%20serve%20para%20o%20meu%20caso.">Não sabe qual das duas? Fala comigo no WhatsApp.</a>
+    </p>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <p class="assinatura">Thiago Luz <span class="sep">·</span> Escola de Consciências <span class="sep">·</span> 2026</p>
+</footer>
+
+</body>
+</html>

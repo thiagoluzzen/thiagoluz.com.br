@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aconselhamento Pontual — Thiago Luz</title>
+<meta name="description" content="Três sessões individuais para uma questão específica que você já sabe qual é. Organizar pensamento e caminho, sem investigar o padrão de fundo.">
+<!--
+  PÁGINA DE PRODUTO — Aconselhamento Pontual. thiagoluz.com.br/aconselhamento-pontual/
+  Escrita em par com terapia-sob-medida/index.html (mesmo pedido, mesma sessão) —
+  a fronteira de ESCOPO entre as duas é obrigatória e tem que sair idêntica nas duas
+  peças (regra do BRIEFING-COMUM.md e do OFERTAS-E-ROTINA.md).
+
+  FRASE DE FRONTEIRA (verbatim, igual na pagina irma):
+  "O que separa Aconselhamento Pontual de Terapia sob Medida nao e a duracao da
+  sessao -- e o escopo: uma questao especifica e delimitada, ou o padrao de fundo
+  que a sustenta."
+
+  A primeira versao afirmava que as duas sessoes tinham igual duracao. O auditor
+  pegou em 28/08/2026: e falso. O brandbook §5.3 da 60 min fixos ao
+  Aconselhamento e 60 a 90 a Terapia sob Medida. A regra e que a duracao nao
+  CARREGA a diferenca, nao que os numeros sejam iguais -- e a propria pagina se
+  contradizia duas telas abaixo, na logistica. A frase veio copiada do portal,
+  que comete o mesmo deslize; copiar o erro de terceiro nao o corrige.
+
+  Herda o esqueleto de thiagoluz.com.br/consulta-inicial/ (6 blocos + 1 CTA duplo:
+  checkout principal, WhatsApp secundário) — mesma decisão de 28/08/2026 aplicada
+  à ESTRUTURA em Grupo.
+
+  COR: não é produto ESTRUTURA — usa a paleta da marca pessoal (petróleo/branco
+  quente/bege areia/dourado), não o black premium. Regra do brandbook: "quem vê o
+  petróleo está com a pessoa; quem vê o preto está com o programa" — aqui a pessoa
+  já sabe a questão, não está entrando num programa.
+
+  Preço conferido em ~/claude/marca/OFERTAS-E-ROTINA.md e no portal (escolanovavida)
+  em 28/08/2026: R$ 450 em até 12x R$ 45, R$ 150 por sessão, 3 sessões de 60 min
+  fixos. Bate nas duas fontes, sem divergência. Só o valor de entrada (R$ 450)
+  aparece no bloco de fechamento; o parcelamento fica no checkout, como manda o
+  BRIEFING-COMUM.md (não abrir um 3º lugar de preço).
+
+  Checkout testado HTTP 200 em 28/08/2026: /agendar/aconselhamento.
+
+  ESCADA: este é o degrau de entrada pago (R$ 450), abaixo de Terapia sob Medida
+  (a partir de R$ 900). A página não usa "mais barato" nem qualquer comparação de
+  preço — a diferença que ela defende é de ESCOPO, para não soar versão reduzida
+  do produto de cima (regra explícita do pedido).
+
+  HEADLINE — 3 variações, framework nomeado:
+  A (ESCOLHIDA) — PAS, nível de consciência 3 (já busca solução: sabe a questão,
+     não sabe o caminho): "Você já sabe qual é a questão. Falta organizar o caminho
+     até a decisão." Venceu porque o público desta página, ao contrário do da
+     ESTRUTURA em Grupo, chega sabendo nomear o problema — é o traço que define o
+     próprio produto (fato da fonte). PAS exagerado não serve aqui: a dor já é
+     conhecida, não precisa ser agitada, só resolvida.
+  B — BAB: "De uma dúvida específica a um caminho claro, em três conversas." Mais
+     fraca porque o "antes" fica genérico demais para quem já sabe exatamente qual
+     é a dúvida.
+  C — AIDA (Atenção): "Tem uma decisão te travando?" Boa como anúncio, fraca como
+     abertura de página — pressupõe que o leitor ainda não nomeou a trava, e aqui
+     ele já nomeou.
+-->
+<style>
+:root{
+  /* Paleta da marca pessoal — brandbook §3, aplicação fora do ESTRUTURA. */
+  --petroleo:  #0F2D3A; /* texto, títulos, contorno */
+  --branco:    #F7F5EF; /* fundo — branco quente */
+  --bege:      #D8CFC0; /* painel: caixa de preço, filtro */
+  --dourado:   #B99B5F; /* valor, marcador, CTA */
+  --petroleo-suave: rgba(15,45,58,.14); /* linhas divisórias */
+
+  --titulo: "League Spartan","Manrope","Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --texto:  "Inter","IBM Plex Sans","Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+
+  --coluna: 34rem;
+  --margem: 1.5rem;
+  --ar: 4.5rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--branco);
+  color:var(--petroleo);
+  font-family:var(--texto);
+  font-size:1.0625rem;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.pular{position:absolute;left:-9999px}
+.pular:focus{position:static;display:block;padding:.75rem var(--margem);background:var(--dourado);color:var(--petroleo)}
+:focus-visible{outline:2px solid var(--petroleo);outline-offset:3px}
+
+.topo{padding:2rem var(--margem) 0}
+.marca{
+  margin:0;font-family:var(--titulo);font-size:.75rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--petroleo);font-weight:600;opacity:.72;
+}
+.marca strong{opacity:1}
+.sep{opacity:.4;padding:0 .3em}
+
+.secao{max-width:var(--coluna);margin:0 auto;padding:var(--ar) var(--margem)}
+.secao+.secao{border-top:1px solid var(--petroleo-suave)}
+
+h1,h2{font-family:var(--titulo);font-weight:700;color:var(--petroleo);margin:0}
+h1{font-size:clamp(1.9rem,8vw,2.7rem);line-height:1.2;letter-spacing:-.01em}
+h2.frase{
+  font-size:clamp(1.4rem,5.2vw,1.85rem);line-height:1.3;letter-spacing:-.005em;
+  color:var(--petroleo);margin-bottom:1.5rem;text-transform:none;
+}
+h2.frase.fecho{font-size:clamp(1.6rem,6vw,2.1rem)}
+
+.texto{margin:0 0 1.4rem;color:var(--petroleo)}
+.texto:last-child{margin-bottom:0}
+
+.destaque{
+  font-family:var(--titulo);font-size:1.25rem;line-height:1.5;font-weight:500;
+  color:var(--petroleo);margin:0 0 1.4rem;padding-left:1.25rem;
+  border-left:2px solid var(--petroleo);
+}
+
+.hero{padding-top:3rem}
+.hero .sub{margin:1.5rem 0 0;font-size:1.0625rem;color:var(--petroleo);max-width:30rem}
+.acao{margin:2.25rem 0 0}
+
+.cta{
+  display:inline-block;background:var(--dourado);color:var(--petroleo);
+  font-family:var(--titulo);font-size:1rem;font-weight:700;letter-spacing:.01em;
+  text-decoration:none;padding:1.05rem 1.75rem;border-radius:2px;min-height:3rem;
+  border:1px solid var(--dourado);transition:background-color 160ms ease,color 160ms ease;
+}
+.cta:hover,.cta:focus-visible{background:transparent;color:var(--petroleo);border-color:var(--petroleo)}
+@media (prefers-reduced-motion:reduce){.cta{transition:none}}
+
+.cta-sec{
+  display:block;margin-top:1rem;color:var(--petroleo);font-size:.9375rem;
+  text-decoration:underline;text-underline-offset:3px;opacity:.78;
+}
+.cta-sec:hover,.cta-sec:focus-visible{opacity:1}
+
+.filtro{list-style:none;margin:2rem 0 0;padding:0}
+.filtro li{color:var(--petroleo);padding:.8rem 0;border-top:1px solid var(--petroleo-suave)}
+.filtro li:last-child{border-bottom:1px solid var(--petroleo-suave)}
+.filtro .nao::before{content:"Não é para quem ";opacity:.7;font-weight:600}
+.filtro .sim::before{content:"É para quem ";color:var(--petroleo);font-weight:600}
+.filtro a{color:var(--petroleo)}
+
+.logistica{list-style:none;margin:1.5rem 0 2rem;padding:0}
+.logistica li{
+  display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0;
+  border-top:1px solid var(--petroleo-suave);
+}
+.logistica li:last-child{border-bottom:1px solid var(--petroleo-suave)}
+.logistica .rotulo{color:var(--petroleo);opacity:.72;font-size:.9375rem}
+.logistica .valor{color:var(--petroleo);font-family:var(--titulo);font-weight:600;text-align:right}
+
+.rota{list-style:none;counter-reset:rota;margin:0 0 2rem;padding:0}
+.rota li{counter-increment:rota;display:flex;flex-direction:column;padding:1.05rem 0;border-top:1px solid var(--petroleo-suave)}
+.rota li:last-child{border-bottom:1px solid var(--petroleo-suave)}
+.rota .etapa{font-family:var(--titulo);font-size:1.15rem;font-weight:700;color:var(--petroleo)}
+.rota .etapa::before{content:counter(rota);font-size:.7rem;font-weight:600;color:var(--petroleo);margin-right:.8rem;vertical-align:.3em}
+.rota li.foco .etapa{background:var(--bege);padding:.05em .45em;border-radius:2px}
+.rota .verbo{font-family:var(--titulo);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--petroleo);opacity:.72;margin-top:.3rem}
+.rota .desc{color:var(--petroleo);font-size:.9375rem;margin-top:.15rem}
+
+.preco-caixa{
+  background:var(--bege);border:1px solid rgba(15,45,58,.18);border-radius:4px;
+  padding:1.5rem 1.5rem;margin:1.75rem 0 0;
+}
+.preco-valor{font-family:var(--titulo);color:var(--petroleo);font-size:2rem;font-weight:700;line-height:1}
+.preco-unidade{color:var(--petroleo);opacity:.72;font-size:.875rem;margin-top:.25rem}
+.preco-nota{color:var(--petroleo);opacity:.85;font-size:.875rem;margin-top:1rem;line-height:1.6}
+
+.quem .nome{font-size:1.5rem;color:var(--petroleo);font-weight:700;margin-bottom:.3rem}
+.titulo{margin:0 0 1.5rem;font-family:var(--titulo);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--petroleo)}
+.ancora{margin:0 0 2rem;padding-left:1.25rem;border-left:2px solid var(--petroleo)}
+.ancora p{margin:0;font-family:var(--titulo);font-size:1.0625rem;line-height:1.6;color:var(--petroleo);font-weight:500}
+.linha-responsa{margin:1.75rem 0 0;font-size:.875rem;line-height:1.6;color:rgba(15,45,58,.62)}
+
+.fechamento{padding-bottom:calc(var(--ar) + .75rem)}
+
+.rodape{background:var(--branco);color:var(--petroleo);padding:2.5rem var(--margem);border-top:1px solid var(--petroleo-suave)}
+.rodape>*{max-width:var(--coluna);margin-left:auto;margin-right:auto}
+.assinatura{margin:0;font-family:var(--titulo);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(15,45,58,.62)}
+
+@media (min-width:46rem){
+  :root{--margem:2.5rem;--ar:6rem}
+  body{font-size:1.125rem}
+  .hero{padding-top:4.5rem}
+  .rota li{flex-direction:row;align-items:baseline;gap:1.25rem}
+  .rota .etapa{flex:0 0 6.5rem}
+  .rota .verbo{flex:0 0 6.5rem;margin-top:0}
+  .rota .desc{flex:1 1 auto;margin-top:0}
+}
+@media print{
+  body{background:#fff;color:#111}
+  .cta{background:#111;color:#fff;border-color:#111}
+}
+.foto-quem{
+  width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;display:block;
+  border:1px solid rgba(15,45,58,.14);margin:0 auto 2.5rem;max-width:22rem;
+}
+</style>
+</head>
+<body>
+
+<a class="pular" href="#agendar">Ir para a inscrição</a>
+
+<header class="topo">
+  <p class="marca"><strong>Aconselhamento Pontual</strong> <span class="sep">·</span> Thiago Luz</p>
+</header>
+
+<main>
+
+  <!-- 1. DOR PELO MECANISMO. Framework: PAS, consciência 3 (já sabe a questão,
+       busca o caminho). Público chega frio pela bio — não presume histórico. -->
+  <section class="secao hero">
+    <h1>Você já sabe qual é a questão. Falta organizar o caminho até a decisão.</h1>
+    <p class="sub">Não é todo problema que pede investigar a vida inteira. Às
+      vezes o que falta é sentar com alguém treinado para isso, olhar de frente
+      para uma questão específica, e sair com clareza sobre o que fazer com
+      ela — em poucas conversas, não num processo longo.</p>
+    <p class="acao">
+      <a class="cta" data-cta="hero" href="https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/aconselhamento">Agendar o Aconselhamento Pontual</a>
+      <a class="cta-sec" data-cta="hero-sec" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%21%20Tenho%20uma%20quest%C3%A3o%20espec%C3%ADfica%20e%20quero%20entender%20se%20o%20Aconselhamento%20Pontual%20serve%20para%20o%20meu%20caso.">Prefere conversar antes? Fala comigo no WhatsApp.</a>
+    </p>
+  </section>
+
+  <!-- 2. PARA QUEM — filtro explícito, com a fronteira de ESCOPO (obrigatória,
+       idêntica na página irmã) e link para Terapia sob Medida, que agora existe. -->
+  <section class="secao para-quem">
+    <h2 class="frase">Isto é para uma questão. Não para investigar tudo que a cerca.</h2>
+    <p class="texto">Você não precisa de um diagnóstico amplo nem de revisar sua
+      história inteira para começar aqui. Precisa de uma coisa: já saber, mais
+      ou menos, qual é a decisão ou a situação que está pedindo clareza agora.</p>
+    <p class="destaque">O que separa Aconselhamento Pontual de Terapia sob
+    Medida não é a duração da sessão — é o escopo: uma questão específica e
+    delimitada, ou o padrão de fundo que a sustenta.</p>
+
+    <ul class="filtro">
+      <li class="sim">já sabe qual é a questão — uma decisão a tomar, uma situação concreta — e quer um caminho, não uma investigação.</li>
+      <li class="sim">prefere um formato curto e fechado, com início e fim definidos em três encontros.</li>
+      <li class="nao">percebe que essa mesma questão se repete em formatos diferentes há tempos — aí o trabalho é no padrão de fundo, e quem cobre isso é a <a href="https://thiagoluz.com.br/terapia-sob-medida/">Terapia sob Medida</a>.</li>
+      <li class="nao">quer um acompanhamento contínuo, sem prazo para acabar — isso é outro degrau da escada, mais longo que os dois.</li>
+    </ul>
+  </section>
+
+  <!-- 3. COMO FUNCIONA NA PRÁTICA — formato, sem promessa de resultado nem prazo. -->
+  <section class="secao pratica">
+    <h2 class="frase">Três sessões. Sessenta minutos cada. Fim combinado desde o início.</h2>
+    <p class="texto">Não é uma sessão avulsa nem um processo aberto: é um pacote
+      fechado de três encontros individuais, pensado para essa questão que você
+      já trouxe — do primeiro ao terceiro, o trabalho é organizar pensamento e
+      caminho em torno dela.</p>
+
+    <ul class="logistica">
+      <li><span class="rotulo">Sessões</span><span class="valor">3 individuais</span></li>
+      <li><span class="rotulo">Duração</span><span class="valor">60 min fixos</span></li>
+      <li><span class="rotulo">Formato</span><span class="valor">online, um a um</span></li>
+      <li><span class="rotulo">Escopo</span><span class="valor">uma questão delimitada</span></li>
+    </ul>
+
+    <p class="texto">Não prometo um resultado certo nem um prazo fixo de virada.
+      O que este trabalho faz: organiza o pensamento em torno da sua questão e
+      te dá um caminho para decidir. O que ele não faz: investigar o que, além
+      dessa questão, sustenta o jeito como você decide — para isso existe o
+      degrau de cima.</p>
+  </section>
+
+  <!-- 4. ONDE ENTRA NO MÉTODO ROTA — recorte deliberado: aqui o trabalho pesa
+       em Ordem e Ação, não em Raiz. Diferença central frente à página irmã,
+       onde o recorte pesa em Raiz e Tônus. -->
+  <section class="secao metodo">
+    <h2 class="frase">Aqui, o Método ROTA entra por Ordem e Ação.</h2>
+    <p class="texto">O Método ROTA tem quatro passos, sempre nesta ordem: Raiz
+      (entender), Ordem (organizar), Tônus (fortalecer), Ação (construir). Num
+      processo curto como este, o trabalho não percorre os quatro a fundo —
+      ele se concentra onde a sua questão específica pede.</p>
+
+    <ol class="rota">
+      <li><span class="etapa">Raiz</span><span class="verbo">Entender</span><span class="desc">só o necessário para situar a questão, não a origem inteira</span></li>
+      <li class="foco"><span class="etapa">Ordem</span><span class="verbo">Organizar</span><span class="desc">o pensamento em torno da decisão, com clareza</span></li>
+      <li class="foco"><span class="etapa">Tônus</span><span class="verbo">Fortalecer</span><span class="desc">segurança suficiente para sustentar a escolha</span></li>
+      <li class="foco"><span class="etapa">Ação</span><span class="verbo">Construir</span><span class="desc">um caminho concreto, para sair e seguir</span></li>
+    </ol>
+
+    <p class="texto">Se, ao longo das três sessões, aparecer sinal de que a
+      questão é a ponta de um padrão maior, eu digo isso a você com todas as
+      letras — e o próximo passo é a Terapia sob Medida, não mais sessões
+      pontuais empilhadas.</p>
+  </section>
+
+  <!-- 5. CTA INTERMEDIÁRIO — mesmo par de botões, mesmo destino. -->
+  <section class="secao acao-meio">
+    <p class="acao">
+      <a class="cta" data-cta="meio" href="https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/aconselhamento">Agendar o Aconselhamento Pontual</a>
+      <a class="cta-sec" data-cta="meio-sec" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%21%20Tenho%20uma%20quest%C3%A3o%20espec%C3%ADfica%20e%20quero%20entender%20se%20o%20Aconselhamento%20Pontual%20serve%20para%20o%20meu%20caso.">Prefere conversar antes? Fala comigo no WhatsApp.</a>
+    </p>
+  </section>
+
+  <!-- 6. QUEM CONDUZ — só fatos já publicados na landing da Consulta Inicial e
+       no portal (§ "cinco blocos que a página não pode inventar", playbook
+       pagina-de-vendas). Mesma foto das páginas irmãs, mesma marca. -->
+  <section class="secao quem">
+    <img class="foto-quem" src="thiago-consultorio-v2.webp"
+         alt="Thiago Luz em seu consultório" width="815" height="1086" loading="lazy">
+
+    <h2 class="nome">Thiago Luz</h2>
+    <p class="titulo">Arquiteto de Vidas</p>
+
+    <blockquote class="ancora">
+      <p>Tem muita gente que se entende, mas não consegue construir a própria
+        vida. O meu trabalho é ajudar essa pessoa a arquitetar a própria
+        vida.</p>
+    </blockquote>
+
+    <p class="texto">Sou psicoterapeuta e conduzo a Escola de Consciências,
+      onde atendo com psicoterapia, hipnoterapia, constelação e mentoria —
+      sempre dentro do Método ROTA, que eu construí no atendimento, não na
+      teoria. Atendo desde 2018.</p>
+    <p class="texto">O Aconselhamento Pontual é onde esse método entra em
+      formato curto: três encontros, uma questão, um caminho.</p>
+
+    <p class="linha-responsa">Este trabalho não substitui acompanhamento
+      médico ou psicológico.</p>
+  </section>
+
+  <!-- 7. FECHAMENTO — só o valor de entrada (R$ 450). Parcelamento e
+       detalhe ficam no checkout, conforme regra do BRIEFING-COMUM.md. -->
+  <section class="secao fechamento" id="agendar">
+    <h2 class="frase fecho">Três sessões. Um caminho. Sem processo aberto.</h2>
+
+    <div class="preco-caixa">
+      <p class="preco-valor">R$ 450<span class="preco-unidade" style="display:block">3 sessões — R$ 150 por sessão</span></p>
+      <p class="preco-nota">O parcelamento no cartão fica disponível no
+        checkout.</p>
+    </div>
+
+    <p class="texto">E há garantia de 7 dias corridos sobre o valor pago: se
+      não for para você, o dinheiro volta.</p>
+
+    <p class="acao">
+      <a class="cta" data-cta="final" href="https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/aconselhamento">Agendar o Aconselhamento Pontual</a>
+      <a class="cta-sec" data-cta="final-sec" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%21%20Tenho%20uma%20quest%C3%A3o%20espec%C3%ADfica%20e%20quero%20entender%20se%20o%20Aconselhamento%20Pontual%20serve%20para%20o%20meu%20caso.">Prefere conversar antes? Fala comigo no WhatsApp.</a>
+    </p>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <p class="assinatura">Thiago Luz <span class="sep">·</span> Escola de Consciências <span class="sep">·</span> 2026</p>
+</footer>
+
+</body>
+</html>

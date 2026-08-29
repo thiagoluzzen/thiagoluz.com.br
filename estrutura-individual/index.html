@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ESTRUTURA Individual — Thiago Luz</title>
+<meta name="description" content="Acompanhamento terapêutico individual pelo Método ROTA — duas sessões quinzenais por mês, um a um, sem prazo para acabar. O grupo semanal vem incluso.">
+<!--
+  PÁGINA DE PRODUTO 2/6 — ESTRUTURA Individual. thiagoluz.com.br/estrutura-individual/
+  Mesmo esqueleto do molde (estrutura-em-grupo/index.html, aprovado com ajustes em
+  28/08/2026): 6 blocos + CTA duplo (checkout principal, WhatsApp secundário).
+  Checkout: https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/estrutura
+    — testado HTTP 200 em 28/08/2026, antes de gravar o link.
+  Preço conferido em ~/claude/marca/OFERTAS-E-ROTINA.md em 28/08/2026: entrada de
+    R$ 500/mes confere. Tri/sem/anual NÃO são repetidos aqui — mesma regra da
+    página irmã: preço repetido em mais um lugar é mais um lugar que envelhece
+    calado. O número completo vive no checkout.
+
+  ONDE ESTA PÁGINA SE AFASTA DO MOLDE, E POR QUÊ (mandado pelo auditor: declarar
+  o afastamento, não só a herança):
+
+  1) SEÇÃO 4 (Método ROTA) FOI REESCRITA, NÃO HERDADA. O molde descreve o ROTA em
+     "espiral" — progressão cíclica que só faz sentido no encontro semanal em
+     grupo (a "volta" é a semana). Aqui o ritmo é quinzenal e um a um: não há
+     "turma" que faz a volta junta, há uma pessoa e um terapeuta ajustando os
+     quatro pilares ao que essa pessoa específica trouxe entre uma sessão e
+     outra. Só a lista dos quatro pilares (Raiz/Ordem/Tônus/Ação) foi reaproveitada
+     do molde — a moldura de "semana" e "espiral" foi trocada por "o que mudou
+     entre as duas sessões", que é o intervalo real deste produto.
+
+  2) A DISTINÇÃO COM O ESTRUTURA EM GRUPO É O EIXO DA PÁGINA, não um parágrafo a
+     mais. Ela aparece três vezes de propósito: na seção 2 (para quem), na 3
+     (como funciona — onde fica claro que o grupo semanal está incluso na
+     assinatura individual, não é produto à parte) e na 4 (o ROTA feito a sós,
+     não em turma). O leitor pode ter vindo da página do Grupo (ela já está no
+     ar) ou pode nunca tê-la visto — a página não presume nenhum dos dois: cada
+     menção ao Grupo é autoexplicativa, sem exigir que o leitor já saiba o que é.
+
+  3) UMA LINHA DISTINGUE TAMBÉM DA TERAPIA SOB MEDIDA (não é a fronteira de
+     ESCOPO do PLANO.md — aquela é obrigatória só entre Aconselhamento Pontual e
+     Terapia sob Medida, e nenhum dos dois é o produto desta página). Inclui a
+     distinção mesmo assim, por decisão própria: o portal já publica essa
+     comparação (fato #3, portal-texto.txt) porque as duas são pacotes vizinhos
+     e fáceis de confundir — a Terapia sob Medida é fechada e já inclui
+     Hipnoterapia e Constelação; a ESTRUTURA Individual é contínua, sem prazo, e
+     usa essas duas técnicas só quando o processo pedir, como sessão avulsa com
+     desconto. Uma frase, não uma seção — para não desviar o eixo da página, que
+     é a distinção com o Grupo.
+
+  4) COMENTÁRIO SOBRE A ROTULAGEM DO PREÇO ("por mês"): mantido igual ao molde,
+     porque este também é produto por assinatura (entrada a qualquer momento,
+     permanência mês a mês) — a ressalva do briefing era para produto avulso/
+     pacote fechado, que não é o caso aqui.
+
+  HEADLINE — 3 variações para teste, cada uma com o framework que a gerou:
+  A (ESCOLHIDA) — PAS, nível de consciência 2 (já sente o problema, não conhece
+     esta solução): "Você já entende a sua história. Falta alguém acompanhando
+     de perto o que ela virou agora."
+  B — BAB: "Hoje você processa sozinho o que muda em você. Aqui, alguém
+     acompanha essa mudança de perto, a cada duas semanas."
+  C — AIDA (Atenção), para quem nunca nomeou o problema: "Existe um
+     acompanhamento pensado só para a sua vida — não para uma turma, não para
+     uma questão pontual."
+  A venceu pelo mesmo motivo da página do Grupo: público frio pela bio (fato de
+  funil — a individual é a porta que mais converte, 5 dos 6 assinantes do grupo
+  vieram dela), então a primeira frase precisa nomear a dor sem pressupor que o
+  leitor já conhece o Thiago ou o Método ROTA. B pressupõe diagnóstico prévio
+  ("o que muda em você"); C funciona melhor como anúncio do que como abertura.
+
+  Auditoria de coerência (checklist §9.2) feita em 28/08/2026 pelo
+  auditor-de-coerencia — aprovado, sem ajuste de conteúdo ou CSS.
+-->
+<style>
+:root{
+  /* Black premium — brandbook-estrutura §3. Nenhuma cor fora desta lista.
+     Idêntica à página irmã: os dois ESTRUTURA são a mesma marca. */
+  --preto:    #000000; /* base */
+  --grafite:  #1F1F1F; /* camada/volume — nunca texto (contraste 1,26) */
+  --prata:    #9EA4AA; /* corpo de texto (8,34) */
+  --dourado:  #B99B5F; /* valor: preço, marcador, CTA (7,92) */
+  --branco:   #FFFFFF; /* títulos e lettering (21,00) */
+
+  --titulo: "League Spartan","Manrope","Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --texto:  "Inter","IBM Plex Sans","Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+
+  --coluna: 34rem;
+  --margem: 1.5rem;
+  --ar: 4.5rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--preto);
+  color:var(--prata);
+  font-family:var(--texto);
+  font-size:1.0625rem;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.pular{position:absolute;left:-9999px}
+.pular:focus{position:static;display:block;padding:.75rem var(--margem);background:var(--dourado);color:var(--preto)}
+:focus-visible{outline:2px solid var(--dourado);outline-offset:3px}
+
+.topo{padding:2rem var(--margem) 0}
+.marca{
+  margin:0;font-family:var(--titulo);font-size:.75rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--prata);font-weight:600;
+}
+.marca strong{color:var(--branco)}
+.sep{color:var(--grafite);padding:0 .3em}
+
+.secao{max-width:var(--coluna);margin:0 auto;padding:var(--ar) var(--margem)}
+.secao+.secao{border-top:1px solid rgba(158,164,170,.16)}
+
+h1,h2{font-family:var(--titulo);font-weight:700;color:var(--branco);margin:0}
+h1{font-size:clamp(1.9rem,8vw,2.7rem);line-height:1.2;letter-spacing:-.01em}
+h2.frase{
+  font-size:clamp(1.4rem,5.2vw,1.85rem);line-height:1.3;letter-spacing:-.005em;
+  color:var(--branco);margin-bottom:1.5rem;text-transform:none;
+}
+h2.frase.fecho{font-size:clamp(1.6rem,6vw,2.1rem)}
+
+.texto{margin:0 0 1.4rem;color:var(--prata)}
+.texto:last-child{margin-bottom:0}
+
+.destaque{
+  font-family:var(--titulo);font-size:1.25rem;line-height:1.5;font-weight:500;
+  color:var(--branco);margin:0 0 1.4rem;padding-left:1.25rem;
+  border-left:2px solid var(--dourado);
+}
+
+.hero{padding-top:3rem}
+.hero .sub{margin:1.5rem 0 0;font-size:1.0625rem;color:var(--prata);max-width:30rem}
+.acao{margin:2.25rem 0 0}
+
+.cta{
+  display:inline-block;background:var(--dourado);color:var(--preto);
+  font-family:var(--titulo);font-size:1rem;font-weight:700;letter-spacing:.01em;
+  text-decoration:none;padding:1.05rem 1.75rem;border-radius:2px;min-height:3rem;
+  border:1px solid var(--dourado);transition:background-color 160ms ease,color 160ms ease;
+}
+.cta:hover,.cta:focus-visible{background:transparent;color:var(--dourado)}
+@media (prefers-reduced-motion:reduce){.cta{transition:none}}
+
+.cta-sec{
+  display:block;margin-top:1rem;color:var(--prata);font-size:.9375rem;
+  text-decoration:underline;text-underline-offset:3px;
+}
+.cta-sec:hover,.cta-sec:focus-visible{color:var(--branco)}
+
+.filtro{list-style:none;margin:2rem 0 0;padding:0}
+.filtro li{color:var(--prata);padding:.8rem 0;border-top:1px solid rgba(158,164,170,.16)}
+.filtro li:last-child{border-bottom:1px solid rgba(158,164,170,.16)}
+.filtro .nao::before{content:"Não é para quem ";color:var(--prata);font-weight:600}
+.filtro .sim::before{content:"É para quem ";color:var(--dourado);font-weight:600}
+
+.logistica{list-style:none;margin:1.5rem 0 2rem;padding:0}
+.logistica li{
+  display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0;
+  border-top:1px solid rgba(158,164,170,.16);
+}
+.logistica li:last-child{border-bottom:1px solid rgba(158,164,170,.16)}
+.logistica .rotulo{color:var(--prata);font-size:.9375rem}
+.logistica .valor{color:var(--branco);font-family:var(--titulo);font-weight:600;text-align:right}
+
+.rota{list-style:none;counter-reset:rota;margin:0 0 2rem;padding:0}
+.rota li{counter-increment:rota;display:flex;flex-direction:column;padding:1.05rem 0;border-top:1px solid rgba(158,164,170,.16)}
+.rota li:last-child{border-bottom:1px solid rgba(158,164,170,.16)}
+.rota .etapa{font-family:var(--titulo);font-size:1.15rem;font-weight:700;color:var(--branco)}
+.rota .etapa::before{content:counter(rota);font-size:.7rem;font-weight:600;color:var(--dourado);margin-right:.8rem;vertical-align:.3em}
+.rota .verbo{font-family:var(--titulo);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--prata);margin-top:.3rem}
+.rota .desc{color:var(--prata);font-size:.9375rem;margin-top:.15rem}
+
+.preco-caixa{
+  background:var(--grafite);border:1px solid rgba(185,155,95,.35);border-radius:4px;
+  padding:1.5rem 1.5rem;margin:1.75rem 0 0;
+}
+.preco-valor{font-family:var(--titulo);color:var(--dourado);font-size:2rem;font-weight:700;line-height:1}
+.preco-unidade{color:var(--prata);font-size:.875rem;margin-top:.25rem}
+.preco-nota{color:var(--prata);font-size:.875rem;margin-top:1rem;line-height:1.6}
+
+.quem .nome{font-size:1.5rem;color:var(--branco);font-weight:700;margin-bottom:.3rem}
+.titulo{margin:0 0 1.5rem;font-family:var(--titulo);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dourado)}
+.ancora{margin:0 0 2rem;padding-left:1.25rem;border-left:2px solid var(--dourado)}
+.ancora p{margin:0;font-family:var(--titulo);font-size:1.0625rem;line-height:1.6;color:var(--branco);font-weight:500}
+.linha-responsa{margin:1.75rem 0 0;font-size:.875rem;line-height:1.6;color:rgba(158,164,170,.7)}
+
+.fechamento{padding-bottom:calc(var(--ar) + .75rem)}
+
+.rodape{background:var(--preto);color:var(--prata);padding:2.5rem var(--margem);border-top:1px solid rgba(158,164,170,.16)}
+.rodape>*{max-width:var(--coluna);margin-left:auto;margin-right:auto}
+.assinatura{margin:0;font-family:var(--titulo);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(158,164,170,.7)}
+
+@media (min-width:46rem){
+  :root{--margem:2.5rem;--ar:6rem}
+  body{font-size:1.125rem}
+  .hero{padding-top:4.5rem}
+  .rota li{flex-direction:row;align-items:baseline;gap:1.25rem}
+  .rota .etapa{flex:0 0 6.5rem}
+  .rota .verbo{flex:0 0 6.5rem;margin-top:0}
+  .rota .desc{flex:1 1 auto;margin-top:0}
+}
+@media print{
+  body{background:#fff;color:#111}
+  .cta{background:#111;color:#fff;border-color:#111}
+}
+/* Foto: mesma regra da página irmã e da landing da Consulta Inicial, para as
+   três se lerem como a mesma marca. O brandbook §6.7 chama a fotografia de
+   "o elemento mais importante da marca". */
+.foto-quem{
+  width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;display:block;
+  border:1px solid rgba(247,245,239,.14);margin:0 auto 2.5rem;max-width:22rem;
+}
+</style>
+</head>
+<body>
+
+<a class="pular" href="#agendar">Ir para a inscrição</a>
+
+<header class="topo">
+  <p class="marca"><strong>ESTRUTURA</strong> Individual <span class="sep">·</span> Método ROTA</p>
+</header>
+
+<main>
+
+  <!-- 1. HERO — dor pelo mecanismo. Framework: PAS (a dor de "entender e não ter
+       quem acompanhe de perto" é sentida por quem já processou muita coisa
+       sozinho, mesmo sem nunca ter ouvido falar do Thiago). Público frio pela
+       bio — mesmo fato de funil da página irmã, mas aqui é a porta que mais
+       converte de fato. -->
+  <section class="secao hero">
+    <h1>Você já entende a sua história. Falta alguém acompanhando de perto o que ela virou agora.</h1>
+    <p class="sub">Autoconhecimento sozinho tem um teto: ele te dá o mapa, mas
+      ninguém revisa com você, de perto, o que muda de uma semana para a
+      outra. A ESTRUTURA Individual é um acompanhamento terapêutico contínuo,
+      um a um, pelo Método ROTA — para trabalhar a sua vida, não um tema
+      genérico.</p>
+    <p class="acao">
+      <a class="cta" data-cta="hero" href="https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/estrutura">Entrar na ESTRUTURA Individual</a>
+      <a class="cta-sec" data-cta="hero-sec" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%21%20Antes%20de%20entrar%20na%20ESTRUTURA%20Individual%2C%20quero%20tirar%20uma%20d%C3%BAvida.">Prefere conversar antes? Fala comigo no WhatsApp.</a>
+    </p>
+  </section>
+
+  <!-- 2. PARA QUEM — filtro explícito. A distinção com o Grupo entra aqui pela
+       primeira vez: não como "veja a outra página", mas como fato autoexplicativo
+       (o grupo semanal vem incluso). O leitor não precisa ter visto a página do
+       Grupo para entender a frase. -->
+  <section class="secao para-quem">
+    <h2 class="frase">Isto é para quem quer o trabalho voltado só para a própria vida.</h2>
+    <p class="texto">Você não precisa nunca ter feito terapia comigo para
+      entrar aqui. Precisa reconhecer isto: você já sabe nomear o que sente,
+      já entende boa parte da própria história, e mesmo assim continua
+      decidindo sozinho, sem ninguém acompanhando de perto o que essa
+      compreensão vira na prática.</p>
+    <p class="destaque">Entender sozinho tem limite. Ter alguém acompanhando o
+      que muda, sessão a sessão, é outro trabalho.</p>
+
+    <ul class="filtro">
+      <li class="sim">quer atenção só sua, não dividida com um grupo — e, enquanto estiver aqui, o encontro semanal em grupo já vem incluso, sem custo à parte.</li>
+      <li class="sim">está lidando com mais de uma frente da vida ao mesmo tempo e não tem uma questão isolada para resolver em três sessões.</li>
+      <li class="nao">tem uma questão específica e delimitada, com prazo curto — para isso existe um acompanhamento mais pontual, não este.</li>
+      <li class="nao">quer só o encontro coletivo semanal, sem sessão individual — isso existe separado, como a ESTRUTURA em Grupo.</li>
+    </ul>
+  </section>
+
+  <!-- 3. COMO FUNCIONA NA PRÁTICA — formato, sem promessa de resultado nem prazo.
+       Segunda menção ao Grupo (incluso na assinatura) e única linha sobre a
+       Terapia sob Medida, por decisão própria (ver comentário de governança). -->
+  <section class="secao pratica">
+    <h2 class="frase">Duas sessões por mês, de quinze em quinze dias. Sem data para acabar.</h2>
+    <p class="texto">Não existe turma nem número fixo de encontros. Você
+      entra quando decidir entrar, e o acompanhamento continua enquanto fizer
+      sentido para você.</p>
+
+    <ul class="logistica">
+      <li><span class="rotulo">Sessão</span><span class="valor">quinzenal, 60 min</span></li>
+      <li><span class="rotulo">Formato</span><span class="valor">individual, um a um</span></li>
+      <li><span class="rotulo">Grupo semanal</span><span class="valor">incluso na assinatura</span></li>
+      <li><span class="rotulo">Entrada</span><span class="valor">a qualquer momento</span></li>
+    </ul>
+
+    <p class="texto">O trabalho usa as ferramentas do processo terapêutico no
+      dia a dia — abordagem sistêmica, trabalho biográfico, PNL. Hipnoterapia
+      e Constelação Familiar Sistêmica não entram por padrão aqui: quando o
+      seu processo pedir uma delas, elas entram como sessão avulsa, com
+      desconto para quem assina. É diferente da Terapia sob Medida, que é um
+      pacote fechado e já inclui as duas desde a primeira sessão.</p>
+  </section>
+
+  <!-- 4. MÉTODO ROTA — REESCRITO, NÃO HERDADO DA ESPIRAL DO MOLDE (ver comentário
+       de governança no topo do arquivo). Aqui o ritmo é o intervalo entre duas
+       sessões de uma pessoa só, não a semana de uma turma. -->
+  <section class="secao metodo">
+    <h2 class="frase">Os quatro pilares se ajustam ao que você trouxer entre uma sessão e outra.</h2>
+    <p class="texto">O Método ROTA tem uma ordem — Raiz, Ordem, Tônus, Ação —,
+      mas aqui ela não segue uma agenda de turma. A cada quinze dias, a
+      sessão revisa qual pilar a sua vida real pediu naquele intervalo: às
+      vezes é voltar à Raiz de um padrão que reapareceu, às vezes é sustentar
+      uma Ação que você já decidiu tomar.</p>
+
+    <ol class="rota">
+      <li><span class="etapa">Raiz</span><span class="verbo">Entender</span><span class="desc">identidade, padrões, origem</span></li>
+      <li><span class="etapa">Ordem</span><span class="verbo">Organizar</span><span class="desc">clareza, comunicação, acordos</span></li>
+      <li><span class="etapa">Tônus</span><span class="verbo">Fortalecer</span><span class="desc">segurança interna, regulação</span></li>
+      <li><span class="etapa">Ação</span><span class="verbo">Construir</span><span class="desc">decisão, vida prática</span></li>
+    </ol>
+
+    <p class="texto">Não é uma turma passando pelos quatro pilares junto. É
+      você e eu, olhando só para a sua vida, decidindo em qual pilar entrar a
+      cada quinze dias.</p>
+  </section>
+
+  <!-- 5. CTA INTERMEDIÁRIO — mesmo par de botões, mesmo destino. -->
+  <section class="secao acao-meio">
+    <p class="acao">
+      <a class="cta" data-cta="meio" href="https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/estrutura">Entrar na ESTRUTURA Individual</a>
+      <a class="cta-sec" data-cta="meio-sec" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%21%20Antes%20de%20entrar%20na%20ESTRUTURA%20Individual%2C%20quero%20tirar%20uma%20d%C3%BAvida.">Prefere conversar antes? Fala comigo no WhatsApp.</a>
+    </p>
+  </section>
+
+  <!-- 6. QUEM CONDUZ — mesmos fatos já publicados na página irmã e na landing da
+       Consulta Inicial (§ "Os cinco blocos que a página não pode inventar" do
+       playbook pagina-de-vendas). Mesma foto, mesma citação-âncora, para as
+       três páginas se lerem como a mesma marca. -->
+  <section class="secao quem">
+    <img class="foto-quem" src="thiago-consultorio-v2.webp"
+         alt="Thiago Luz em seu consultório" width="815" height="1086" loading="lazy">
+
+    <h2 class="nome">Thiago Luz</h2>
+    <p class="titulo">Arquiteto de Vidas</p>
+
+    <blockquote class="ancora">
+      <p>Tem muita gente que se entende, mas não consegue construir a própria
+        vida. O meu trabalho é ajudar essa pessoa a arquitetar a própria
+        vida.</p>
+    </blockquote>
+
+    <p class="texto">Sou psicoterapeuta e conduzo a Escola de Consciências,
+      onde atendo com psicoterapia, hipnoterapia, constelação e mentoria —
+      sempre dentro do Método ROTA, que eu construí no atendimento, não na
+      teoria. Atendo desde 2018.</p>
+    <p class="texto">No individual, esse método acontece só para a sua vida:
+      sem turma, sem tema genérico, no seu ritmo.</p>
+
+    <p class="linha-responsa">Este trabalho não substitui acompanhamento
+      médico ou psicológico.</p>
+  </section>
+
+  <!-- 7. FECHAMENTO — preço de entrada + garantia + satélite + grupo incluso +
+       CTA final. Preço: só o número de entrada (regra do PLANO.md e do
+       briefing). Tabela completa dos planos vive só no checkout. -->
+  <section class="secao fechamento" id="agendar">
+    <h2 class="frase fecho">A entrada é mensal. Ficar é decisão sua, mês a mês.</h2>
+
+    <div class="preco-caixa">
+      <p class="preco-valor">R$ 500<span class="preco-unidade" style="display:block">por mês</span></p>
+      <p class="preco-nota">No checkout você também encontra os planos
+        trimestral, semestral e anual, com desconto por compromisso.</p>
+    </div>
+
+    <p class="texto">Enquanto a assinatura estiver ativa, a ESTRUTURA em
+      Grupo — o encontro semanal, às quintas à noite — está incluída, sem
+      custo à parte. E quem assina tem 15% de desconto em sessões avulsas de
+      Hipnoterapia e Constelação Familiar Sistêmica, sempre que o processo
+      pedir uma delas.</p>
+    <p class="texto">E há garantia de 7 dias corridos sobre o valor pago: se
+      não for para você, o dinheiro volta.</p>
+
+    <p class="acao">
+      <a class="cta" data-cta="final" href="https://escolanovavida.com.br/terapeutas/t/thiago-luz/agendar/estrutura">Entrar na ESTRUTURA Individual</a>
+      <a class="cta-sec" data-cta="final-sec" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%21%20Antes%20de%20entrar%20na%20ESTRUTURA%20Individual%2C%20quero%20tirar%20uma%20d%C3%BAvida.">Prefere conversar antes? Fala comigo no WhatsApp.</a>
+    </p>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <p class="assinatura">Thiago Luz <span class="sep">·</span> Escola de Consciências <span class="sep">·</span> 2026</p>
+</footer>
+
+</body>
+</html>
