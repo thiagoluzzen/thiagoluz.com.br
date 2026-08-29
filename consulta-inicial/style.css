@@ -434,3 +434,8 @@ h2.frase.fecho {
 }
 .cta-sec:hover,
 .cta-sec:focus-visible { color: var(--grafite); }
+
+/* 28/08/2026 -- o cabecalho passa a nomear o PRODUTO primeiro, como as cinco
+   paginas de produto fazem. Sem esta regra o <strong> nao teria efeito visual e
+   o produto ficaria com o mesmo peso do resto da linha. */
+.marca strong { color: var(--petroleo); font-weight: 700; }
