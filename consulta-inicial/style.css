@@ -84,7 +84,7 @@ body {
   font-weight: 500;
 }
 
-.sep { color: var(--salvia); padding: 0 0.25em; }
+.sep { color: var(--ardosia); padding: 0 0.25em; }
 
 .secao {
   max-width: var(--coluna);
@@ -163,7 +163,7 @@ h2.frase.fecho {
   margin: 1rem 0 0;
   font-size: 0.875rem;
   line-height: 1.6;
-  color: var(--salvia);
+  color: var(--ardosia);
 }
 
 /* ---------- CTA — único destino em toda a página ---------- */
@@ -248,7 +248,7 @@ h2.frase.fecho {
   font-size: 0.8125rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--salvia);
+  color: var(--ardosia);
   margin-top: 0.35rem;
 }
 
@@ -336,7 +336,15 @@ h2.frase.fecho {
 }
 .formacao li:last-child { border-bottom: 1px solid rgba(52, 73, 94, 0.14); }
 
-/* 30/08/2026 -- o dourado saiu de tres lugares desta folha. Ele estava como
+/* 31/08/2026 -- o verde SALVIA saiu de cinco lugares como cor de TEXTO, e virou
+   ardosia. O brandbook ja declarava esse par proibido, com o numero: "Verde salvia
+   como texto em fundo claro -- 2,72. E cor de campo e de icone, nao de tipo."
+   Estava no ar mesmo assim. Quem achou foi o `conferir-par-de-cor.py`, novo hoje:
+   nenhuma varredura de texto ve isso, porque contraste nao e uma string.
+   A ardosia da 8,52 sobre o branco quente e mantem a hierarquia de texto secundario.
+   O salvia continua valido no que ele e -- campo, icone, indicador.
+
+   30/08/2026 -- o dourado saiu de tres lugares desta folha. Ele estava como
    TEXTO e como filete sobre o branco quente #F7F5EF: 2,43:1 medido, contra o
    minimo de 4,5. E o mesmo defeito que o brandbook ja registra da campanha de
    26/08, e que voltou nas paginas de produto -- passa por varredura de lexico
@@ -362,7 +370,7 @@ h2.frase.fecho {
   margin: 2rem 0 0;
   font-size: 0.9375rem;
   line-height: 1.7;
-  color: var(--salvia);
+  color: var(--ardosia);
 }
 
 /* ---------- fechamento ---------- */
@@ -389,7 +397,7 @@ h2.frase.fecho {
   font-size: 0.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--salvia);
+  color: var(--ardosia);
 }
 
 /* ---------- telas maiores: mais ar, mesma coluna ---------- */
