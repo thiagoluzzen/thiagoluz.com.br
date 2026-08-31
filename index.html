@@ -12,6 +12,16 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <style>
+/*
+  REGRA DE DOURADO POR FUNDO (Emenda 15, 30/08/2026):
+    fundo BLACK PREMIUM #000000  -> dourado fosco  #B99B5F  (o do brandbook)
+    fundo AZUL MARINHO  #0C1F3D  -> dourado quente #D0B96C
+  O fosco funciona no preto e apaga no azul: no marinho sao duas cores de
+  baixa luminescencia competindo, e o ouro perde o brilho que o faz ouro.
+  O quente sobe de 40 para 46 graus de matiz (mais amarelo, menos ambar) e de
+  55% para 62% de luz. Contraste no marinho: 6,19 -> 8,47.
+  O dourado deixa de ser uma cor e passa a ser uma cor POR FUNDO.
+*/
   :root{
   /* 28/08/2026 -- Emenda 14 do brandbook: o azul principal saiu de #0F2D3A
      para #0C1F3D. O antigo estava em 198 graus de matiz, faixa ciano, com o
@@ -25,7 +35,7 @@
     --ardosia:#34495E;
     --areia:#D8CFC0;
     --quente:#F7F5EF;
-    --dourado:#B99B5F;
+    --dourado:#D0B96C;
     --linha:rgba(247,245,239,.14);
     --suave:rgba(247,245,239,.62);
   }
@@ -112,7 +122,7 @@
   }
   .selo{
     flex:none;font-size:.9375rem;font-weight:600;align-self:flex-start;
-    background:rgba(185,155,95,.18);color:var(--dourado);
+    background:rgba(208,185,108,.18);color:var(--dourado);
     padding:.375rem .625rem;border-radius:5px;
     white-space:nowrap;text-align:center;line-height:1.3;
   }
