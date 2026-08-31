@@ -85,12 +85,22 @@
   só que na escala de um padrão específico, não da vida inteira.
 -->
 <style>
+/*
+  REGRA DE DOURADO POR FUNDO (Emenda 15, 30/08/2026):
+    fundo BLACK PREMIUM #000000  -> dourado fosco  #B99B5F  (o do brandbook)
+    fundo AZUL MARINHO  #0C1F3D  -> dourado quente #D0B96C
+  O fosco funciona no preto e apaga no azul: no marinho sao duas cores de
+  baixa luminescencia competindo, e o ouro perde o brilho que o faz ouro.
+  O quente sobe de 40 para 46 graus de matiz (mais amarelo, menos ambar) e de
+  55% para 62% de luz. Contraste no marinho: 6,19 -> 8,47.
+  O dourado deixa de ser uma cor e passa a ser uma cor POR FUNDO.
+*/
 :root{
   /* Paleta da marca pessoal — BRIEFING-COMUM.md. Nenhuma cor fora desta lista. */
   --fundo:    #0C1F3D; /* petróleo — base */
   --camada:   #152A4A; /* petróleo mais claro — caixas, nunca texto */
   --corpo:    #D8CFC0; /* bege areia — corpo de texto */
-  --dourado:  #B99B5F; /* valor: preço, marcador, CTA */
+  --dourado:  #D0B96C; /* valor: preço, marcador, CTA */
   --branco:   #F7F5EF; /* branco quente — títulos e lettering */
 
   --titulo: "League Spartan","Manrope","Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -185,7 +195,7 @@ h3.tecnica{font-family:var(--titulo);font-size:1.05rem;font-weight:700;color:var
 .logistica .valor{color:var(--branco);font-family:var(--titulo);font-weight:600;text-align:right}
 
 .preco-caixa{
-  background:var(--camada);border:1px solid rgba(185,155,95,.35);border-radius:4px;
+  background:var(--camada);border:1px solid rgba(208,185,108,.35);border-radius:4px;
   padding:1.5rem 1.5rem;margin:1.75rem 0 0;
 }
 .preco-valor{font-family:var(--titulo);color:var(--dourado);font-size:2rem;font-weight:700;line-height:1}

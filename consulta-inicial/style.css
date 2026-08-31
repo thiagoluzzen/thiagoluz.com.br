@@ -64,7 +64,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid var(--dourado);
+  outline: 2px solid var(--petroleo);
   outline-offset: 3px;
 }
 
@@ -238,7 +238,7 @@ h2.frase.fecho {
   content: counter(rota);
   font-size: 0.75rem;
   font-weight: 500;
-  color: var(--dourado);
+  color: var(--petroleo);
   margin-right: 0.9rem;
   vertical-align: 0.35em;
 }
@@ -301,7 +301,7 @@ h2.frase.fecho {
   font-size: 0.8125rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--dourado);
+  color: var(--petroleo);
 }
 
 .ancora {
@@ -336,6 +336,14 @@ h2.frase.fecho {
 }
 .formacao li:last-child { border-bottom: 1px solid rgba(52, 73, 94, 0.14); }
 
+/* 30/08/2026 -- o dourado saiu de tres lugares desta folha. Ele estava como
+   TEXTO e como filete sobre o branco quente #F7F5EF: 2,43:1 medido, contra o
+   minimo de 4,5. E o mesmo defeito que o brandbook ja registra da campanha de
+   26/08, e que voltou nas paginas de produto -- passa por varredura de lexico
+   e preco sem ser visto, porque contraste nao e uma string: e a relacao entre
+   duas cores. O dourado continua legitimo como PREENCHIMENTO de botao com
+   texto escuro em cima, e como texto sobre os fundos escuros (Emenda 15). */
+
 /* Placeholder bloqueante: precisa ser impossível de não ver.
    Some da página no momento em que o Thiago responder.
    Sem uso na página desde 26/08/2026 — as credenciais foram preenchidas.
@@ -343,7 +351,7 @@ h2.frase.fecho {
 .pendencia {
   margin: 2rem 0 0;
   padding: 0.85rem 1rem;
-  border: 1px dashed var(--dourado);
+  border: 1px dashed var(--petroleo);
   color: var(--ardosia);
   font-size: 0.9375rem;
   line-height: 1.6;
