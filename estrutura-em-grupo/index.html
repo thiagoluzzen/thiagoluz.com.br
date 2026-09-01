@@ -184,6 +184,24 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-3C6Z7XHLK9');
 </script>
+<!-- Pixel da Meta. Instalado em 31/08/2026. Atribui a venda ao anuncio e monta
+     publico; e' outra coisa do Analytics, que so' conta quem chega. Precisa
+     estar no ar ANTES do primeiro anuncio: ele so' aprende com quem passa
+     depois de instalado. O ID nao e' segredo -- aparece no codigo da pagina. -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1267024997190625');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1267024997190625&ev=PageView&noscript=1" alt=""></noscript>
 </head>
 <body>
 
@@ -369,13 +387,35 @@ gtag('config', 'G-3C6Z7XHLK9');
     if (!a) { return; }
     var href = a.getAttribute("href") || "";
     if (href.charAt(0) === "#") { return; }
-    if (typeof window.gtag !== "function") { return; }
-    window.gtag("event", "clique_cta", {
-      canal: canalDe(href),
-      posicao: a.getAttribute("data-cta") || "cartao",
-      produto: produto,
-      destino: href.slice(0, 120)
-    });
+    var canal = canalDe(href);
+    var posicao = a.getAttribute("data-cta") || "cartao";
+
+    /* Cada medidor e' avisado por conta propria. Ate 31/08/2026 havia um
+       `if (typeof gtag !== "function") return;` aqui em cima: com ele, o
+       Analytics bloqueado -- adblock, rede lenta, consentimento -- levaria o
+       Pixel junto, calado. Um medidor que cai nao pode derrubar o outro. */
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "clique_cta", {
+        canal: canal,
+        posicao: posicao,
+        produto: produto,
+        destino: href.slice(0, 120)
+      });
+    }
+
+    /* No Pixel o nome do evento nao e' livre: a Meta so' otimiza campanha
+       sobre os eventos que ela conhece. `Schedule` e' o de marcar horario --
+       que e' o que o checkout faz -- e `Contact` e' o de iniciar conversa.
+       Link interno NAO vira evento: navegar dentro do site nao e' conversao,
+       e contar como se fosse ensinaria o anuncio a buscar quem so' passeia. */
+    if (typeof window.fbq === "function") {
+      var evento = null;
+      if (canal === "checkout") { evento = "Schedule"; }
+      else if (canal === "whatsapp" || canal === "grupo-whatsapp") { evento = "Contact"; }
+      if (evento) {
+        window.fbq("track", evento, { content_name: produto, content_category: posicao });
+      }
+    }
   }, true);
 })();
 </script>
