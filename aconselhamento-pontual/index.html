@@ -200,6 +200,17 @@ h2.frase.fecho{font-size:clamp(1.6rem,6vw,2.1rem)}
   border:1px solid rgba(12,31,61,.14);margin:0 auto 2.5rem;max-width:22rem;
 }
 </style>
+<!-- Medicao. Instalado em 31/08/2026. O ID nao e' segredo: ele aparece no
+     codigo de qualquer pagina que o usa. Existe para responder uma pergunta que
+     hoje nao tem resposta -- quantas pessoas chegam ao preco e nao compram --
+     porque a venda ja se sabe (a cobranca e' na mao) e a visita nao. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3C6Z7XHLK9"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-3C6Z7XHLK9');
+</script>
 </head>
 <body>
 
@@ -350,5 +361,48 @@ h2.frase.fecho{font-size:clamp(1.6rem,6vw,2.1rem)}
   <p class="assinatura">Thiago Luz <span class="sep">·</span> Escola de Consciências <span class="sep">·</span> 2026</p>
 </footer>
 
+<script>
+(function () {
+  "use strict";
+  /* Marca o clique de saida. O canal sai do HREF, nunca do papel visual:
+     em 28/08/2026 um script daqui mirava "a.cta" -- a classe do botao
+     preenchido -- e a inversao dos canais o fez reescrever o botao errado.
+     Papel visual muda por decisao de conversao; canal nao muda.
+
+     O ouvinte e' delegado no documento, entao le o href NO MOMENTO do clique.
+     Isso importa na consulta-inicial, onde outro script reescreve o link do
+     WhatsApp com o codigo do anuncio depois que a pagina carrega. */
+  function canalDe(href) {
+    if (!href) { return "vazio"; }
+    if (href.indexOf("wa.me/") > -1) { return "whatsapp"; }
+    if (href.indexOf("chat.whatsapp.com") > -1) { return "grupo-whatsapp"; }
+    if (href.indexOf("/agendar/") > -1) { return "checkout"; }
+    if (href.indexOf("thiagoluz.com.br") > -1) { return "interno"; }
+    if (href.indexOf("mailto:") === 0) { return "email"; }
+    return "externo";
+  }
+  /* O pathname nem sempre e' um caminho: num preview local a pagina roda como
+     data: URL e o pathname vira o documento inteiro. Sem trava, isso ia para a
+     medicao como nome de produto -- lixo que nao da erro, so suja o relatorio.
+     Achado testando antes de publicar, em 31/08/2026. */
+  var produto = window.location.pathname.replace(/^\/|\/$/g, "") || "hub";
+  if (produto.length > 40 || !/^[A-Za-z0-9/_-]*$/.test(produto)) {
+    produto = "fora-do-padrao";
+  }
+  document.addEventListener("click", function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest("a[href]") : null;
+    if (!a) { return; }
+    var href = a.getAttribute("href") || "";
+    if (href.charAt(0) === "#") { return; }
+    if (typeof window.gtag !== "function") { return; }
+    window.gtag("event", "clique_cta", {
+      canal: canalDe(href),
+      posicao: a.getAttribute("data-cta") || "cartao",
+      produto: produto,
+      destino: href.slice(0, 120)
+    });
+  }, true);
+})();
+</script>
 </body>
 </html>
