@@ -144,6 +144,9 @@
     font-size:.8125rem;letter-spacing:.1em;text-transform:uppercase;
     color:rgba(247,245,239,.5);
   }
+  /* A que abre a lista nao leva margem de cima: o topo ja' tem 2.5rem
+     embaixo, e somar as duas afastava o convite dos botoes. */
+  .divisoria.primeira{margin-top:0}
   .divisoria::before,.divisoria::after{
     content:"";flex:1;height:1px;background:var(--linha);
   }
@@ -207,10 +210,12 @@ src="https://www.facebook.com/tr?id=1267024997190625&ev=PageView&noscript=1" alt
     <div class="nome">Thiago Luz</div>
     <div class="titulo">Arquiteto de Vidas</div>
     <h1 class="ancora">Tem muita gente que se entende, mas não consegue construir a própria vida.</h1>
-    <p class="metodo">O meu trabalho é ajudar essa pessoa a arquitetar a própria vida — com o Método ROTA: Raiz, Ordem, Tônus, Ação.</p>
+    <p class="metodo">O meu trabalho é ajudar você a arquitetar a própria vida — com ESTRUTURA e o Método ROTA: Raiz, Ordem, Tônus, Ação.</p>
   </header>
 
   <nav class="lista">
+    <div class="divisoria primeira">escolha uma opção</div>
+
     <a class="btn destaque" href="https://thiagoluz.com.br/consulta-inicial/" target="_blank" rel="noopener">
       <span class="linha1">
           <span class="tit">Consulta Inicial</span>
