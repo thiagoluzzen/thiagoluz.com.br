@@ -171,35 +171,9 @@
     .btn{padding:1rem 1.0625rem;gap:.75rem}
   }
 </style>
-<!-- Medicao. Instalado em 31/08/2026. O ID nao e' segredo: ele aparece no
-     codigo de qualquer pagina que o usa. Existe para responder uma pergunta que
-     hoje nao tem resposta -- quantas pessoas chegam ao preco e nao compram --
-     porque a venda ja se sabe (a cobranca e' na mao) e a visita nao. -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3C6Z7XHLK9"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-3C6Z7XHLK9');
-</script>
-<!-- Pixel da Meta. Instalado em 31/08/2026. Atribui a venda ao anuncio e monta
-     publico; e' outra coisa do Analytics, que so' conta quem chega. Precisa
-     estar no ar ANTES do primeiro anuncio: ele so' aprende com quem passa
-     depois de instalado. O ID nao e' segredo -- aparece no codigo da pagina. -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1267024997190625');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1267024997190625&ev=PageView&noscript=1" alt=""></noscript>
+<!-- Medicao (GA G-3C6Z7XHLK9, Pixel 1267024997190625): so carrega depois do
+     "Aceitar" do aviso. Ver /consentimento.js. Sem a imagem noscript do Pixel. -->
+<script src="/consentimento.js" defer></script>
 </head>
 <body>
 <main class="env">
@@ -280,14 +254,15 @@ src="https://www.facebook.com/tr?id=1267024997190625&ev=PageView&noscript=1" alt
 
   </nav>
 
-  <section class="avaliacoes">
-    <iframe src="https://teravy.com.br/t/thiago-luz/widget/completo" width="100%" height="440" frameborder="0" style="border:none;max-width:440px" title="Avaliações" loading="lazy"></iframe>
+  <section class="avaliacoes" hidden data-cc-mostrar>
+    <iframe data-cc-src="https://teravy.com.br/t/thiago-luz/widget/completo" width="100%" height="440" frameborder="0" style="border:none;max-width:440px" title="Avaliações" loading="lazy"></iframe>
   </section>
 
   <footer>
     Thiago Luz · Uberaba, Minas Gerais<br>
     <a href="https://wa.me/5534984309000" target="_blank" rel="noopener">(34) 98430-9000</a><br>
     © 2026
+    <p class="cc-rodape"><a href="/privacidade/">Política de privacidade</a> · <button type="button" data-cc-abrir>Mudar minha escolha</button></p>
   </footer>
 
 </main>

@@ -173,35 +173,9 @@ h2.frase.fecho{font-size:clamp(1.6rem,6vw,2.1rem)}
   border:1px solid rgba(247,245,239,.14);margin:0 auto 2.5rem;max-width:22rem;
 }
 </style>
-<!-- Medicao. Instalado em 31/08/2026. O ID nao e' segredo: ele aparece no
-     codigo de qualquer pagina que o usa. Existe para responder uma pergunta que
-     hoje nao tem resposta -- quantas pessoas chegam ao preco e nao compram --
-     porque a venda ja se sabe (a cobranca e' na mao) e a visita nao. -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3C6Z7XHLK9"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-3C6Z7XHLK9');
-</script>
-<!-- Pixel da Meta. Instalado em 31/08/2026. Atribui a venda ao anuncio e monta
-     publico; e' outra coisa do Analytics, que so' conta quem chega. Precisa
-     estar no ar ANTES do primeiro anuncio: ele so' aprende com quem passa
-     depois de instalado. O ID nao e' segredo -- aparece no codigo da pagina. -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1267024997190625');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1267024997190625&ev=PageView&noscript=1" alt=""></noscript>
+<!-- Medicao (GA G-3C6Z7XHLK9, Pixel 1267024997190625): so carrega depois do
+     "Aceitar" do aviso. Ver /consentimento.js. Sem a imagem noscript do Pixel. -->
+<script src="/consentimento.js" data-tema="preto" defer></script>
 </head>
 <body>
 
@@ -385,6 +359,7 @@ src="https://www.facebook.com/tr?id=1267024997190625&ev=PageView&noscript=1" alt
 
 <footer class="rodape">
   <p class="assinatura">Thiago Luz <span class="sep">·</span> Escola de Consciências <span class="sep">·</span> 2026</p>
+  <p class="cc-rodape"><a href="/privacidade/">Política de privacidade</a> · <button type="button" data-cc-abrir>Mudar minha escolha</button></p>
 </footer>
 
 <script>
