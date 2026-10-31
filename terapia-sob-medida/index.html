@@ -3,356 +3,127 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Terapia sob Medida — Thiago Luz</title>
-<meta name="description" content="Pacote fechado que investiga o padrão de fundo, com Hipnoterapia e Constelação Familiar Sistêmica inclusas sempre que o caso pedir, sem custo adicional.">
-<style>
-:root{
-  /* Paleta da marca pessoal — brandbook §3, aplicação fora do ESTRUTURA. */
-  --petroleo:  #0C1F3D; /* texto, títulos, contorno */
-  --branco:    #F7F5EF; /* fundo — branco quente */
-  --bege:      #D8CFC0; /* painel: caixa de preço, filtro */
-  --dourado:   #B99B5F; /* valor, marcador, CTA */
-  --petroleo-suave: rgba(12,31,61,.14); /* linhas divisórias */
-
-  --titulo: "League Spartan","Manrope","Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --texto:  "Inter","IBM Plex Sans","Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
-
-  --coluna: 34rem;
-  --margem: 1.5rem;
-  --ar: 4.5rem;
-}
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{
-  margin:0;
-  background:var(--branco);
-  color:var(--petroleo);
-  font-family:var(--texto);
-  font-size:1.0625rem;
-  line-height:1.7;
-  -webkit-font-smoothing:antialiased;
-}
-.pular{position:absolute;left:-9999px}
-.pular:focus{position:static;display:block;padding:.75rem var(--margem);background:var(--dourado);color:var(--petroleo)}
-:focus-visible{outline:2px solid var(--petroleo);outline-offset:3px}
-
-.topo{padding:2rem var(--margem) 0}
-.marca{
-  margin:0;font-family:var(--titulo);font-size:.75rem;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--petroleo);font-weight:600;opacity:.72;
-}
-.marca strong{opacity:1}
-.sep{opacity:.4;padding:0 .3em}
-
-.secao{max-width:var(--coluna);margin:0 auto;padding:var(--ar) var(--margem)}
-.secao+.secao{border-top:1px solid var(--petroleo-suave)}
-
-h1,h2{font-family:var(--titulo);font-weight:700;color:var(--petroleo);margin:0}
-h1{font-size:clamp(1.9rem,8vw,2.7rem);line-height:1.2;letter-spacing:-.01em}
-h2.frase{
-  font-size:clamp(1.4rem,5.2vw,1.85rem);line-height:1.3;letter-spacing:-.005em;
-  color:var(--petroleo);margin-bottom:1.5rem;text-transform:none;
-}
-h2.frase.fecho{font-size:clamp(1.6rem,6vw,2.1rem)}
-
-.texto{margin:0 0 1.4rem;color:var(--petroleo)}
-.texto:last-child{margin-bottom:0}
-
-.destaque{
-  font-family:var(--titulo);font-size:1.25rem;line-height:1.5;font-weight:500;
-  color:var(--petroleo);margin:0 0 1.4rem;padding-left:1.25rem;
-  border-left:2px solid var(--petroleo);
-}
-
-.hero{padding-top:3rem}
-.hero .sub{margin:1.5rem 0 0;font-size:1.0625rem;color:var(--petroleo);max-width:30rem}
-.acao{margin:2.25rem 0 0}
-
-.cta{
-  display:inline-block;background:var(--dourado);color:var(--petroleo);
-  font-family:var(--titulo);font-size:1rem;font-weight:700;letter-spacing:.01em;
-  text-decoration:none;padding:1.05rem 1.75rem;border-radius:2px;min-height:3rem;
-  border:1px solid var(--dourado);transition:background-color 160ms ease,color 160ms ease;
-}
-.cta:hover,.cta:focus-visible{background:transparent;color:var(--petroleo);border-color:var(--petroleo)}
-@media (prefers-reduced-motion:reduce){.cta{transition:none}}
-
-.cta-sec{
-  display:block;margin-top:1rem;color:var(--petroleo);font-size:.9375rem;
-  text-decoration:underline;text-underline-offset:3px;opacity:.78;
-}
-.cta-sec:hover,.cta-sec:focus-visible{opacity:1}
-
-.filtro{list-style:none;margin:2rem 0 0;padding:0}
-.filtro li{color:var(--petroleo);padding:.8rem 0;border-top:1px solid var(--petroleo-suave)}
-.filtro li:last-child{border-bottom:1px solid var(--petroleo-suave)}
-.filtro .nao::before{content:"Não é para quem ";opacity:.7;font-weight:600}
-.filtro .sim::before{content:"É para quem ";color:var(--petroleo);font-weight:600}
-.filtro a{color:var(--petroleo)}
-
-.logistica{list-style:none;margin:1.5rem 0 2rem;padding:0}
-.logistica li{
-  display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0;
-  border-top:1px solid var(--petroleo-suave);
-}
-.logistica li:last-child{border-bottom:1px solid var(--petroleo-suave)}
-.logistica .rotulo{color:var(--petroleo);opacity:.72;font-size:.9375rem}
-.logistica .valor{color:var(--petroleo);font-family:var(--titulo);font-weight:600;text-align:right}
-
-.rota{list-style:none;counter-reset:rota;margin:0 0 2rem;padding:0}
-.rota li{counter-increment:rota;display:flex;flex-direction:column;padding:1.05rem 0;border-top:1px solid var(--petroleo-suave)}
-.rota li:last-child{border-bottom:1px solid var(--petroleo-suave)}
-.rota .etapa{font-family:var(--titulo);font-size:1.15rem;font-weight:700;color:var(--petroleo)}
-.rota .etapa::before{content:counter(rota);font-size:.7rem;font-weight:600;color:var(--petroleo);margin-right:.8rem;vertical-align:.3em}
-.rota li.foco .etapa{background:var(--bege);padding:.05em .45em;border-radius:2px}
-.rota .verbo{font-family:var(--titulo);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--petroleo);opacity:.72;margin-top:.3rem}
-.rota .desc{color:var(--petroleo);font-size:.9375rem;margin-top:.15rem}
-
-.preco-caixa{
-  background:var(--bege);border:1px solid rgba(12,31,61,.18);border-radius:4px;
-  padding:1.5rem 1.5rem;margin:1.75rem 0 0;
-}
-.preco-valor{font-family:var(--titulo);color:var(--petroleo);font-size:2rem;font-weight:700;line-height:1}
-.preco-unidade{color:var(--petroleo);opacity:.72;font-size:.875rem;margin-top:.25rem}
-.preco-nota{color:var(--petroleo);opacity:.85;font-size:.875rem;margin-top:1rem;line-height:1.6}
-
-.quem .nome{font-size:1.5rem;color:var(--petroleo);font-weight:700;margin-bottom:.3rem}
-.titulo{margin:0 0 1.5rem;font-family:var(--titulo);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--petroleo)}
-.ancora{margin:0 0 2rem;padding-left:1.25rem;border-left:2px solid var(--petroleo)}
-.ancora p{margin:0;font-family:var(--titulo);font-size:1.0625rem;line-height:1.6;color:var(--petroleo);font-weight:500}
-.linha-responsa{margin:1.75rem 0 0;font-size:.875rem;line-height:1.6;color:rgba(12,31,61,.62)}
-
-.fechamento{padding-bottom:calc(var(--ar) + .75rem)}
-
-.rodape{background:var(--branco);color:var(--petroleo);padding:2.5rem var(--margem);border-top:1px solid var(--petroleo-suave)}
-.rodape>*{max-width:var(--coluna);margin-left:auto;margin-right:auto}
-.assinatura{margin:0;font-family:var(--titulo);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(12,31,61,.62)}
-
-@media (min-width:46rem){
-  :root{--margem:2.5rem;--ar:6rem}
-  body{font-size:1.125rem}
-  .hero{padding-top:4.5rem}
-  .rota li{flex-direction:row;align-items:baseline;gap:1.25rem}
-  .rota .etapa{flex:0 0 6.5rem}
-  .rota .verbo{flex:0 0 6.5rem;margin-top:0}
-  .rota .desc{flex:1 1 auto;margin-top:0}
-}
-@media print{
-  body{background:#fff;color:#111}
-  .cta{background:#111;color:#fff;border-color:#111}
-}
-.foto-quem{
-  width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;display:block;
-  border:1px solid rgba(12,31,61,.14);margin:0 auto 2.5rem;max-width:22rem;
-}
-.cc-rodape{margin:.5rem 0 0;font-size:.8125rem;line-height:1.7}
-.cc-rodape a{display:inline-block;padding:.25rem 0;color:inherit;text-decoration:underline;text-underline-offset:3px}
-</style>
-<!-- Sem medicao nesta pagina (decisao do Thiago, 19/10/2026): ela diria ao
-     Google e a Meta que a pessoa se interessa por tratamento. Sem aviso: nao
-     ha o que consentir. Nenhum script de terceiro. -->
+<title>Terapia sob Medida: hipnoterapia e constelação | Thiago Luz</title>
+<meta name="description" content="Terapia com hipnoterapia e constelação inclusas. Sessão avulsa de R$ 350, 3 sessões por R$ 900 ou 5 sessões por R$ 1.500, de 60 a 90 minutos.">
+<link rel="canonical" href="https://thiagoluz.com.br/terapia-sob-medida/">
+<meta property="og:title" content="Terapia sob Medida: hipnoterapia e constelação | Thiago Luz">
+<meta property="og:description" content="Terapia com hipnoterapia e constelação inclusas, em sessões de 60 a 90 minutos.">
+<meta property="og:url" content="https://thiagoluz.com.br/terapia-sob-medida/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<link rel="stylesheet" href="/estilo.css">
+<!-- SEM MEDICAO, de proposito (decisao do Thiago, 19/10/2026, commit 6167773): sem
+     consentimento.js, sem GA, sem Pixel; o rodape leva so' a politica.
+     Esta pagina junta a Terapia sob Medida e as sessoes avulsas de hipnoterapia e
+     constelacao (pedido do Thiago, 31/10). Textos: Escritorio, auditados
+     (textos-site.md v2, secao 4). CTA: botao de agendamento da Consulta Inicial,
+     dentro desta pagina (resposta do Thiago, 31/10). Precos: brandbook v1.29 §5.3/§5.10. -->
 </head>
-<body>
-
-<a class="pular" href="#agendar">Ir para a inscrição</a>
+<body class="tema-claro">
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
 
 <header class="topo">
-  <p class="marca"><strong>Terapia sob Medida</strong> <span class="sep">·</span> Thiago Luz</p>
+  <div class="topo-dentro">
+    <a class="marca" href="https://thiagoluz.com.br/">Thiago Luz<small>Mentor de Famílias e Casais</small></a>
+  </div>
 </header>
 
-<main>
+<main id="conteudo">
 
-  <section class="secao hero">
-    <h1>Resolveu a questão de novo. E ela voltou de novo, com outra roupa.</h1>
-    <p class="sub">Às vezes o problema não é a questão em si — é o padrão que
-      fica de pé depois que a questão específica já foi resolvida, e volta a
-      produzir a próxima. A Terapia sob Medida é um pacote fechado para
-      investigar e mudar esse padrão, com Hipnoterapia e Constelação Familiar
-      Sistêmica inclusas sempre que o caso pedir.</p>
-    <p class="acao">
-      <a class="cta" data-cta="hero" href="https://teravy.com.br/t/thiago-luz/agendar/terapia">Agendar a Terapia sob Medida</a>
-      <a class="cta-sec" data-cta="hero-sec" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%21%20Sinto%20que%20uma%20quest%C3%A3o%20se%20repete%20pra%20mim%20e%20quero%20entender%20se%20a%20Terapia%20sob%20Medida%20serve%20para%20o%20meu%20caso.">Prefere conversar antes? Fala comigo no WhatsApp.</a>
-    </p>
+  <section class="secao">
+    <p class="etiqueta">Terapia sob Medida, com hipnoterapia e constelação</p>
+    <h1>Terapia sob Medida</h1>
+    <p class="sub">Resolver a questão e mudar o padrão que a produz são trabalhos diferentes. A Terapia sob Medida é terapia, com hipnoterapia e constelação inclusas, em sessões de 60 a 90 minutos.</p>
+    <!-- DADO DO THIAGO: link de agendamento (aqui e no fecho) -->
+    <p class="acao"><a class="botao" href="#DADO-DO-THIAGO-link-de-agendamento">Agendar a Consulta Inicial</a></p>
   </section>
 
-  <section class="secao para-quem">
-    <h2 class="frase">Existe uma diferença entre resolver uma questão e mudar o padrão que a produz.</h2>
-    <p class="texto">Você não precisa chegar com um diagnóstico pronto sobre
-      qual é o seu padrão. Precisa reconhecer um sinal: a mesma dinâmica
-      aparecendo em situações diferentes, mesmo depois de cada uma delas ter
-      sido resolvida em separado.</p>
-
-    <ul class="filtro">
-      <li class="sim">percebe uma dinâmica que se repete em contextos diferentes, mesmo já tendo resolvido cada situação isoladamente.</li>
-      <li class="sim">quer um processo fechado, com Hipnoterapia e Constelação já inclusas quando o caso pedir, sem negociar isso à parte.</li>
-      <li class="nao">quer só tirar uma dúvida pontual, sem intenção de olhar o que se repete — para isso, a Consulta Inicial já basta.</li>
-      <li class="nao">quer um acompanhamento contínuo, sem prazo para acabar — isso é a ESTRUTURA, individual ou em grupo.</li>
-    </ul>
+  <section class="secao">
+    <h2>Quando a mesma coisa volta com outra roupa</h2>
+    <p>Você resolveu uma situação. Meses depois, aparece outra, com a mesma forma. Cada situação tem a sua solução. Quando a mesma dinâmica aparece em situações diferentes, a solução de cada uma não chegou ao que as produz.</p>
+    <p>A Terapia sob Medida investiga esse padrão. Você não precisa chegar com um diagnóstico pronto. Precisa reconhecer um sinal: a mesma dinâmica, em contextos diferentes, mesmo depois de cada situação resolvida em separado.</p>
   </section>
 
-  <section class="secao pratica">
-    <h2 class="frase">Um pacote fechado, com as ferramentas certas já dentro dele.</h2>
-    <p class="texto">A entrada é um pacote de três sessões individuais. Se o
-      processo pedir mais espaço para consolidar a mudança, existe a opção de
-      cinco sessões — o mesmo processo, com mais tempo. Em ambos os casos,
-      Hipnoterapia e Constelação Familiar Sistêmica entram sempre que o caso
-      pedir, sem custo adicional: tudo já dentro do preço, desde a primeira
-      sessão.</p>
-
-    <ul class="logistica">
-      <li><span class="rotulo">Entrada</span><span class="valor">3 sessões individuais</span></li>
-      <li><span class="rotulo">Duração</span><span class="valor">60–90 min</span></li>
-      <li><span class="rotulo">Ferramentas</span><span class="valor">hipnoterapia e constelação inclusas</span></li>
-      <li><span class="rotulo">Formato</span><span class="valor">pacote fechado, começa e termina</span></li>
-    </ul>
-
-    <p class="texto">Não prometo um resultado certo nem um prazo fixo de
-      virada. O que este trabalho faz: investiga o padrão de fundo e usa as
-      ferramentas certas para mexer nele. O que ele não faz: virar
-      acompanhamento contínuo sem fim — isso é outro produto, para quando o
-      processo pedir sustentação de mais longo prazo.</p>
+  <section class="secao">
+    <h2>O que é</h2>
+    <p>Terapia individual, com hipnoterapia e constelação inclusas sempre que o caso pedir. Sessões de 60 a 90 minutos, em três formatos:</p>
+    <div class="tabela"><table>
+      <thead><tr><th scope="col">Formato</th><th scope="col">Valor</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Sessão avulsa</strong></td><td>R$ 350</td></tr>
+        <tr><td><strong>Pacote de 3 sessões</strong></td><td>R$ 900 (R$ 300 por sessão)</td></tr>
+        <tr><td><strong>Pacote de 5 sessões</strong></td><td>R$ 1.500 (R$ 300 por sessão)</td></tr>
+      </tbody>
+    </table></div>
   </section>
 
-  <section class="secao metodo">
-    <h2 class="frase">Aqui, o Método ROTA entra por Raiz e Tônus.</h2>
-    <p class="texto">O Método ROTA tem quatro passos, sempre nesta ordem: Raiz
-      (entender), Ordem (organizar), Tônus (fortalecer), Ação (construir). Num
-      processo que investiga padrão de fundo, o trabalho começa investigando a
-      Raiz — o que sustenta essa dinâmica além da situação que a revelou — e
-      fortalece o Tônus antes de seguir para Ordem e Ação.</p>
-
-    <ol class="rota">
-      <li class="foco"><span class="etapa">Raiz</span><span class="verbo">Entender</span><span class="desc">o que sustenta o padrão, não só a última situação</span></li>
-      <li><span class="etapa">Ordem</span><span class="verbo">Organizar</span><span class="desc">o que a Raiz revelou, na medida que o processo permitir</span></li>
-      <li class="foco"><span class="etapa">Tônus</span><span class="verbo">Fortalecer</span><span class="desc">com hipnoterapia e constelação, sempre que o caso pedir</span></li>
-      <li><span class="etapa">Ação</span><span class="verbo">Construir</span><span class="desc">um jeito diferente de responder, daqui para frente</span></li>
-    </ol>
-
-    <p class="texto">Se, ao longo do processo, ficar claro que a questão era
-      pontual e não um padrão maior, eu digo isso a você com todas as letras.</p>
+  <section class="secao">
+    <h2>O que este trabalho faz, e o que não faz</h2>
+    <p>Não prometo resultado certo nem prazo de virada. O trabalho investiga o padrão de fundo e usa as ferramentas certas para mexer nele. Ele não vira acompanhamento contínuo: quando o processo pedir sustentação mais longa, existem o <a href="/vinculos-individual/">Vínculos Individual</a> e o <a href="/vinculos-em-grupo/">Vínculos em Grupo</a>.</p>
+    <p>Se, ao longo do trabalho, ficar claro que a questão era pontual e não um padrão maior, eu digo isso a você com todas as letras.</p>
+    <p>O trabalho segue o Método ROTA: Raiz, Ordem, Tônus, Ação.</p>
   </section>
 
-  <section class="secao acao-meio">
-    <p class="acao">
-      <a class="cta" data-cta="meio" href="https://teravy.com.br/t/thiago-luz/agendar/terapia">Agendar a Terapia sob Medida</a>
-      <a class="cta-sec" data-cta="meio-sec" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%21%20Sinto%20que%20uma%20quest%C3%A3o%20se%20repete%20pra%20mim%20e%20quero%20entender%20se%20a%20Terapia%20sob%20Medida%20serve%20para%20o%20meu%20caso.">Prefere conversar antes? Fala comigo no WhatsApp.</a>
-    </p>
+  <section class="secao itens">
+    <h2>Hipnoterapia e constelação</h2>
+    <p><strong>Hipnoterapia.</strong> Atenção focada e relaxamento guiado, para trabalhar reações automáticas que você já entendeu e continua tendo.</p>
+    <p><strong>Constelação Familiar Sistêmica.</strong> Um olhar sistêmico sobre padrões de família que se repetem na vida adulta. É uma forma de ler o padrão, não um diagnóstico clínico.</p>
+    <p>As duas entram na Terapia sob Medida. Em separado, existe a <strong>sessão avulsa de hipnoterapia ou de constelação</strong>: R$ 350.</p>
+    <p>A sessão avulsa de hipnoterapia ou de constelação é um recurso para quem já está em processo, comprado quando o processo pede.</p>
   </section>
 
-  <section class="secao quem">
-    <img class="foto-quem" src="thiago-consultorio-v2.webp"
-         alt="Thiago Luz em seu consultório" width="815" height="1086" loading="lazy">
-
-    <h2 class="nome">Thiago Luz</h2>
-    <p class="titulo">Arquiteto de Vidas</p>
-
-    <blockquote class="ancora">
-      <p>Tem muita gente que se entende, mas não consegue construir a própria
-        vida. O meu trabalho é ajudar essa pessoa a arquitetar a própria
-        vida.</p>
-    </blockquote>
-
-    <p class="texto">Sou psicoterapeuta. Desde 2018 atendo com psicoterapia,
-      hipnoterapia, constelação e mentoria — sempre dentro do Método ROTA, que
-      eu construí no atendimento, não na teoria.</p>
-    <p class="texto">A Terapia sob Medida é onde esse método entra com as
-      ferramentas certas já dentro do pacote, para investigar o que sustenta o
-      padrão que você já percebeu.</p>
-
-    <p class="linha-responsa">Este trabalho não substitui acompanhamento
-      médico ou psicológico.</p>
+  <section class="secao">
+    <h2>Garantia</h2>
+    <p>7 dias corridos sobre o valor pago.</p>
   </section>
 
-  <section class="secao fechamento" id="agendar">
-    <h2 class="frase fecho">Um pacote fechado, com tudo já incluído.</h2>
+  <section class="secao">
+    <h2>Perguntas</h2>
+    <dl class="perguntas">
+      <dt>Quanto dura cada sessão?</dt>
+      <dd>De 60 a 90 minutos.</dd>
+      <dt>Qual a diferença para o Vínculos?</dt>
+      <dd>A Terapia sob Medida é terapia, em sessão avulsa ou em pacote de 3 ou 5 sessões. O Vínculos em Grupo e o Vínculos Individual são mentoria. Se você quer uma questão delimitada, o caminho é a Terapia sob Medida; se quer construir e sustentar uma decisão ao longo de meses, o Vínculos.</dd>
+      <dt>Como começo?</dt>
+      <dd>Pela Consulta Inicial, que você agenda pelo botão desta página. Uma conversa de diagnóstico, de 30 a 50 minutos, em que eu escuto, faço perguntas e te digo qual é o formato certo.</dd>
+    </dl>
+  </section>
 
-    <div class="preco-caixa">
-      <p class="preco-valor">R$ 900<span class="preco-unidade" style="display:block">3 sessões — R$ 300 por sessão</span></p>
-      <p class="preco-nota">No checkout você também encontra a opção de 5
-        sessões, com mais espaço para consolidar a mudança — e, nela, acesso
-        de cortesia à ESTRUTURA em Grupo pelo período do processo.</p>
+  <section class="secao">
+    <div class="quem">
+      <img src="/imagens/thiago-consultorio.webp" width="815" height="1086" alt="Thiago Luz em seu consultório" loading="lazy">
+      <div>
+        <p class="quem-nome">Thiago Luz</p>
+        <p class="quem-titulo">Mentor de Famílias e Casais</p>
+        <blockquote><p>Tem muita gente que se entende, mas não consegue construir a própria vida. O meu trabalho é ajudar essa pessoa a dar estrutura à própria vida, ao amor e à família que forma.</p></blockquote>
+        <p>Sou psicoterapeuta. Atendo com psicoterapia, hipnoterapia, constelação e mentoria, sempre dentro do Método ROTA, que eu construí no atendimento. Atendo desde 2018.</p>
+        <ul>
+          <li>Formação de Terapeutas, Escola Nova Vida</li>
+          <li>Técnicas Avançadas de Hipnose Prática e Practitioner em PNL, HipnoBrasil e Instituto Intelecto</li>
+        </ul>
+      </div>
     </div>
+  </section>
 
-    <p class="texto">E há garantia de 7 dias corridos sobre o valor pago: se
-      não for para você, o dinheiro volta.</p>
+  <section class="secao cuidado">
+    <h2>Um cuidado</h2>
+    <p>Este trabalho não substitui acompanhamento médico ou psicológico. Se você vive violência, ameaça ou medo de quem está ao seu lado, a culpa não é sua. Procure ajuda agora: ligue 180 (Central de Atendimento à Mulher, 24 horas, gratuito) ou Disque 100 (Direitos Humanos, para qualquer pessoa). Em perigo imediato, 190. Se você pensa em tirar a própria vida, ligue 188 (CVV, 24 horas). A decisão sobre a sua vida continua sendo sua.</p>
+  </section>
 
-    <p class="acao">
-      <a class="cta" data-cta="final" href="https://teravy.com.br/t/thiago-luz/agendar/terapia">Agendar a Terapia sob Medida</a>
-      <a class="cta-sec" data-cta="final-sec" href="https://wa.me/5534984309000?text=Ol%C3%A1%2C%20Thiago%21%20Sinto%20que%20uma%20quest%C3%A3o%20se%20repete%20pra%20mim%20e%20quero%20entender%20se%20a%20Terapia%20sob%20Medida%20serve%20para%20o%20meu%20caso.">Prefere conversar antes? Fala comigo no WhatsApp.</a>
-    </p>
+  <section class="secao fecho">
+    <h2>Comece pela Consulta Inicial.</h2>
+    <p>Uma conversa de 30 a 50 minutos para entender o que se repete e qual formato serve. Não tem custo.</p>
+    <p class="acao"><a class="botao" href="#DADO-DO-THIAGO-link-de-agendamento">Agendar a Consulta Inicial</a></p>
   </section>
 
 </main>
 
 <footer class="rodape">
-  <p class="assinatura">Thiago Luz <span class="sep">·</span> 2026</p>
-  <p class="cc-rodape"><a href="/privacidade/">Política de privacidade</a></p>
+  <div class="rodape-dentro">
+    <hr class="fio">
+    <p>Thiago Luz · Uberaba, Minas Gerais</p>
+    <p class="cc-rodape"><a href="/privacidade/">Política de privacidade</a></p>
+  </div>
 </footer>
-
-<script>
-(function () {
-  "use strict";
-  /* Marca o clique de saida. O canal sai do HREF, nunca do papel visual:
-     em 28/08/2026 um script daqui mirava "a.cta" -- a classe do botao
-     preenchido -- e a inversao dos canais o fez reescrever o botao errado.
-     Papel visual muda por decisao de conversao; canal nao muda.
-
-     O ouvinte e' delegado no documento, entao le o href NO MOMENTO do clique.
-     Isso importa na consulta-inicial, onde outro script reescreve o link do
-     WhatsApp com o codigo do anuncio depois que a pagina carrega. */
-  function canalDe(href) {
-    if (!href) { return "vazio"; }
-    if (href.indexOf("wa.me/") > -1) { return "whatsapp"; }
-    if (href.indexOf("chat.whatsapp.com") > -1) { return "grupo-whatsapp"; }
-    if (href.indexOf("/agendar/") > -1) { return "checkout"; }
-    if (href.indexOf("thiagoluz.com.br") > -1) { return "interno"; }
-    if (href.indexOf("mailto:") === 0) { return "email"; }
-    return "externo";
-  }
-  /* O pathname nem sempre e' um caminho: num preview local a pagina roda como
-     data: URL e o pathname vira o documento inteiro. Sem trava, isso ia para a
-     medicao como nome de produto -- lixo que nao da erro, so suja o relatorio.
-     Achado testando antes de publicar, em 31/08/2026. */
-  var produto = window.location.pathname.replace(/^\/|\/$/g, "") || "hub";
-  if (produto.length > 40 || !/^[A-Za-z0-9/_-]*$/.test(produto)) {
-    produto = "fora-do-padrao";
-  }
-  document.addEventListener("click", function (ev) {
-    var a = ev.target && ev.target.closest ? ev.target.closest("a[href]") : null;
-    if (!a) { return; }
-    var href = a.getAttribute("href") || "";
-    if (href.charAt(0) === "#") { return; }
-    var canal = canalDe(href);
-    var posicao = a.getAttribute("data-cta") || "cartao";
-
-    /* Cada medidor e' avisado por conta propria. Ate 31/08/2026 havia um
-       `if (typeof gtag !== "function") return;` aqui em cima: com ele, o
-       Analytics bloqueado -- adblock, rede lenta, consentimento -- levaria o
-       Pixel junto, calado. Um medidor que cai nao pode derrubar o outro. */
-    if (typeof window.gtag === "function") {
-      window.gtag("event", "clique_cta", {
-        canal: canal,
-        posicao: posicao,
-        produto: produto,
-        destino: href.slice(0, 120)
-      });
-    }
-
-    /* No Pixel o nome do evento nao e' livre: a Meta so' otimiza campanha
-       sobre os eventos que ela conhece. `Schedule` e' o de marcar horario --
-       que e' o que o checkout faz -- e `Contact` e' o de iniciar conversa.
-       Link interno NAO vira evento: navegar dentro do site nao e' conversao,
-       e contar como se fosse ensinaria o anuncio a buscar quem so' passeia. */
-    if (typeof window.fbq === "function") {
-      var evento = null;
-      if (canal === "checkout") { evento = "Schedule"; }
-      else if (canal === "whatsapp" || canal === "grupo-whatsapp") { evento = "Contact"; }
-      if (evento) {
-        window.fbq("track", evento, { content_name: produto, content_category: posicao });
-      }
-    }
-  }, true);
-})();
-</script>
 </body>
 </html>
