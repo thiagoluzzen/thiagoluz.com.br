@@ -25,12 +25,19 @@
   var PIXEL_ID = "1267024997190625";
   var CHAVE = "tl-consentimento";
 
-  var FRASE = "Google e Meta recebem dados da sua visita, medem o site e ajudam nossos anúncios a chegar a quem se interessa. Aceitar nos ajuda a acertar.";
+  /* A frase do aviso depende de a pagina medir ou nao (decisao do Thiago, 01/11/2026,
+     D-20 opcao B). Nas paginas que medem, a frase de sempre. Na pagina sem medicao
+     (data-medir="nao", a Terapia sob Medida), a frase cita a Teravy e diz que a
+     escolha vale para o site todo. Texto: Escritorio, auditado
+     (scratchpad/site-vinculos/frase-aviso-terapia.md). Nao redigir aqui. */
+  var FRASE_MEDE = "Google e Meta recebem dados da sua visita, medem o site e ajudam nossos anúncios a chegar a quem se interessa. Aceitar nos ajuda a acertar.";
+  var FRASE_SEM_MEDICAO = "Aqui, Aceitar mostra as avaliações da Teravy. Esta página não tem Google nem Meta, mas a escolha vale para o site todo: em outras páginas, eles medem quem aceitou.";
   var POLITICA = "/privacidade/#o-site";
 
   var eu = document.currentScript;
   var tema = (eu && eu.getAttribute("data-tema")) || "";
   var medir = !(eu && eu.getAttribute("data-medir") === "nao");
+  var FRASE = medir ? FRASE_MEDE : FRASE_SEM_MEDICAO;
 
   /* ---------- escolha guardada ---------- */
   var naMemoria = null; // se o localStorage falhar, vale para esta pagina
