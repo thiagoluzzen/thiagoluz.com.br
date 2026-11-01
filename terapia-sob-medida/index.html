@@ -12,12 +12,16 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <link rel="stylesheet" href="/estilo.css">
-<!-- SEM MEDICAO, de proposito (decisao do Thiago, 19/10/2026, commit 6167773): sem
+<!-- SEM GA E SEM PIXEL, de proposito (decisao do Thiago, 19/10/2026, commit 6167773): sem
      consentimento.js, sem GA, sem Pixel; o rodape leva so' a politica.
      Esta pagina junta a Terapia sob Medida e as sessoes avulsas de hipnoterapia e
      constelacao (pedido do Thiago, 31/10). Textos: Escritorio, auditados
      (textos-site.md v2, secao 4). CTA: botao de agendamento da Consulta Inicial,
      dentro desta pagina (resposta do Thiago, 31/10). Precos: brandbook v1.29 §5.3/§5.10. -->
+<!-- 31/10/2026: o quadro de avaliacoes entra nesta pagina (decisao do Thiago). O script
+     vai com data-medir="nao": GA e Pixel continuam fora; com o "Aceitar" guardado, so' o
+     quadro da Teravy carrega. -->
+<script src="/consentimento.js" data-medir="nao" defer></script>
 </head>
 <body class="tema-claro">
 <a class="pular" href="#conteudo">Ir para o conteúdo</a>
@@ -58,7 +62,7 @@
 
   <section class="secao">
     <h2>O que este trabalho faz, e o que não faz</h2>
-    <p>Não prometo resultado certo nem prazo de virada. O trabalho investiga o padrão de fundo e usa as ferramentas certas para mexer nele. Ele não vira acompanhamento contínuo: quando o processo pedir sustentação mais longa, existem o <a href="/vinculos-individual/">Vínculos Individual</a> e o <a href="/vinculos-em-grupo/">Vínculos em Grupo</a>.</p>
+    <p>Não prometo resultado certo nem prazo de virada. O trabalho investiga o padrão de fundo e usa as ferramentas certas para mexer nele. Ele não vira acompanhamento contínuo: quando o processo pedir sustentação mais longa, existem a <a href="/rota-individual/">ROTA Individual</a> e a <a href="/rota-em-grupo/">ROTA em Grupo</a>.</p>
     <p>Se, ao longo do trabalho, ficar claro que a questão era pontual e não um padrão maior, eu digo isso a você com todas as letras.</p>
     <p>O trabalho segue o Método ROTA: Raiz, Ordem, Tônus, Ação.</p>
   </section>
@@ -81,8 +85,8 @@
     <dl class="perguntas">
       <dt>Quanto dura cada sessão?</dt>
       <dd>De 60 a 90 minutos.</dd>
-      <dt>Qual a diferença para o Vínculos?</dt>
-      <dd>A Terapia sob Medida é terapia, em sessão avulsa ou em pacote de 3 ou 5 sessões. O Vínculos em Grupo e o Vínculos Individual são mentoria. Se você quer uma questão delimitada, o caminho é a Terapia sob Medida; se quer construir e sustentar uma decisão ao longo de meses, o Vínculos.</dd>
+      <dt>Qual a diferença para a mentoria ROTA?</dt>
+      <dd>A Terapia sob Medida é terapia, em sessão avulsa ou em pacote de 3 ou 5 sessões. A ROTA em Grupo e a ROTA Individual são mentoria. Se você quer uma questão delimitada, o caminho é a Terapia sob Medida; se quer construir e sustentar uma decisão ao longo de meses, a mentoria ROTA.</dd>
       <dt>Como começo?</dt>
       <dd>Pela Consulta Inicial, que você agenda pelo botão desta página. Uma conversa de diagnóstico, de 30 a 50 minutos, em que eu escuto, faço perguntas e te digo qual é o formato certo.</dd>
     </dl>
@@ -109,6 +113,12 @@
     <p>Este trabalho não substitui acompanhamento médico ou psicológico. Se você vive violência, ameaça ou medo de quem está ao seu lado, a culpa não é sua. Procure ajuda agora: ligue 180 (Central de Atendimento à Mulher, 24 horas, gratuito) ou Disque 100 (Direitos Humanos, para qualquer pessoa). Em perigo imediato, 190. Se você pensa em tirar a própria vida, ligue 188 (CVV, 24 horas). A decisão sobre a sua vida continua sendo sua.</p>
   </section>
 
+  <section class="secao avaliacoes" hidden data-cc-mostrar>
+    <!-- Quadro de avaliacoes da Teravy: o Thiago decidiu (31/10/2026) mante-lo e pô-lo
+         tambem nas paginas de oferta. So' carrega depois do "Aceitar" (/consentimento.js). -->
+    <iframe data-cc-src="https://teravy.com.br/t/thiago-luz/widget/completo" width="100%" height="440" frameborder="0" style="border:none;max-width:440px;display:block" title="Avaliações" loading="lazy"></iframe>
+  </section>
+
   <section class="secao fecho">
     <h2>Comece pela Consulta Inicial.</h2>
     <p>Uma conversa de 30 a 50 minutos para entender o que se repete e qual formato serve. Não tem custo.</p>
@@ -121,7 +131,7 @@
   <div class="rodape-dentro">
     <hr class="fio">
     <p>Thiago Luz · Uberaba, Minas Gerais</p>
-    <p class="cc-rodape"><a href="/privacidade/">Política de privacidade</a></p>
+    <p class="cc-rodape"><a href="/privacidade/">Política de privacidade</a> · <button type="button" data-cc-abrir>Mudar minha escolha</button></p>
   </div>
 </footer>
 </body>

@@ -8,13 +8,15 @@
    - A escolha fica so' no navegador (localStorage), nunca no servidor.
    - Qualquer elemento [data-cc-abrir] (o link "Mudar minha escolha" do
      rodape) reabre o aviso.
-   - Pagina com data-medir="nao" na tag deste script nunca carrega nada e
-     nunca abre o aviso sozinha; o link do rodape ainda deixa mudar a escolha,
-     que vale para as outras paginas.
+   - Pagina com data-medir="nao" na tag deste script nunca carrega GA nem
+     Pixel e nunca abre o aviso sozinha. Se a escolha guardada for "Aceitar",
+     ela carrega so' as janelas de terceiro ([data-cc-src], o quadro de
+     avaliacoes da Teravy). O link do rodape deixa mudar a escolha, que vale
+     para as outras paginas. (Mudado em 31/10/2026; antes nao carregava nada.)
 
    Uso:  <script src="/consentimento.js" defer></script>
          data-tema="preto"  -> paginas da ESTRUTURA (black premium)
-         data-medir="nao"   -> Terapia sob Medida, Hipnoterapia e Constelacao
+         data-medir="nao"   -> Terapia sob Medida (avaliacoes sim, GA e Pixel nao)
    Sem dependencia externa. */
 (function () {
   "use strict";
@@ -52,9 +54,13 @@
   /* ---------- o que so' carrega com aceite ---------- */
   var carregado = false;
   function carregarTudo() {
-    if (carregado || !medir) return;
+    if (carregado) return;
     carregado = true;
 
+    // 31/10/2026: GA e Pixel so' em pagina que mede. Pagina com
+    // data-medir="nao" (Terapia sob Medida) carrega, com o aceite, so' as
+    // janelas de terceiro abaixo (o quadro de avaliacoes), nunca GA nem Pixel.
+    if (medir) {
     // Google Analytics
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
@@ -77,6 +83,7 @@
     }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
     window.fbq("init", PIXEL_ID);
     window.fbq("track", "PageView");
+    }
 
     // Janelas de terceiro que esperam o aceite: <iframe data-cc-src="...">
     var quadros = document.querySelectorAll("iframe[data-cc-src]");
