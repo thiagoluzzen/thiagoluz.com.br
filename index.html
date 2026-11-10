@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Thiago Luz | Terapeuta Mentor de Famílias e Casais</title>
-<meta name="description" content="Tem muita gente que se entende, mas não consegue construir a própria vida. Mentoria em grupo, mentoria individual e terapia, pelo Método ROTA.">
+<meta name="description" content="Tem muita gente que se entende, mas não consegue construir a própria vida. Mentoria ROTA, em grupo ou individual, pelo Método ROTA.">
 <link rel="canonical" href="https://thiagoluz.com.br/">
 <meta property="og:title" content="Thiago Luz | Terapeuta Mentor de Famílias e Casais">
 <meta property="og:description" content="Tem muita gente que se entende, mas não consegue construir a própria vida.">
@@ -104,9 +104,13 @@
   .btn.estrutura:hover{background:#151515;border-color:rgba(247,245,239,.42)}
   .btn.estrutura .tit{color:#FFFFFF}
   .btn.estrutura .sub{color:rgba(247,245,239,.56)}
-  .btn.destaque{border:2px solid #B99B5F;padding:1.375rem 1.25rem}
+  /* 10/11/2026 -- pedido do Thiago: um botao so' da ROTA, em destaque e maior, sem
+     preco e sem «como funciona», levando a /rota/. Sairam Consulta Inicial, Terapia
+     sob Medida e os dois cartoes de ROTA. */
+  .btn.destaque{border:2px solid #B99B5F;padding:1.75rem 1.5rem;gap:.5rem}
   .btn.destaque:hover{border-color:#C9AE78}
-  .btn.destaque .tit{font-size:1.1875rem}
+  .btn.destaque .tit{font-size:1.5rem;letter-spacing:.01em}
+  .btn.destaque .sub{font-size:1rem;color:rgba(247,245,239,.72)}
   /* cartao sem link (o blog ainda nao esta no ar): sem hover, texto a 4,71 */
   .btn.inativo{background:transparent;border-style:dashed;cursor:default}
   .btn.inativo:hover{background:transparent;border-color:var(--linha)}
@@ -180,8 +184,8 @@
 <main class="env">
 
   <header class="topo">
-    <img class="foto" src="foto.jpg" srcset="foto.jpg 1x, foto-2x.jpg 2x"
-         width="104" height="104" alt="Thiago Luz">
+    <img class="foto" src="imagens/thiago-e-daniele-160.jpg" srcset="imagens/thiago-e-daniele-160.jpg 1x, imagens/thiago-e-daniele-320.jpg 2x"
+         width="104" height="104" alt="Thiago Luz e a esposa, Daniele, sorrindo lado a lado, em foto preto e branco">
     <div class="nome">Thiago Luz</div>
     <div class="titulo">Terapeuta Mentor de Famílias e Casais</div>
     <h1 class="ancora">Muita gente se entende, mas não consegue parar de repetir padrões.</h1>
@@ -190,29 +194,9 @@
   </header>
 
   <nav class="lista" aria-label="Páginas">
-    <div class="divisoria primeira">escolha uma opção</div>
-
-    <a class="btn estrutura destaque" href="https://thiagoluz.com.br/rota-em-grupo/">
-      <span class="tit">ROTA em Grupo</span>
-      <span class="sub">Mentoria em grupo, toda quinta à noite, online. Entrada a qualquer momento.</span>
-    </a>
-
-    <a class="btn estrutura" href="https://thiagoluz.com.br/rota-individual/">
-      <span class="tit">ROTA Individual</span>
-      <span class="sub">Mentoria individual, para você ou para o casal. 10 encontros quinzenais, em até 5 meses, com a ROTA em Grupo inclusa.</span>
-    </a>
-
-    <a class="btn" href="https://thiagoluz.com.br/terapia-sob-medida/">
-      <span class="tit">Terapia sob Medida</span>
-      <span class="sub">Terapia com hipnoterapia e constelação inclusas. Sessão avulsa, ou pacote de 3 ou 5 sessões.</span>
-    </a>
-
-    <a class="btn" href="https://teravy.com.br/t/thiago-luz/agendar/45" target="_blank" rel="noopener">
-      <span class="linha1">
-        <span class="tit">Consulta Inicial</span>
-        <span class="selo">sem custo</span>
-      </span>
-      <span class="sub">30 a 50 minutos para entender seu momento e indicar o caminho certo.</span>
+    <a class="btn estrutura destaque" href="https://thiagoluz.com.br/rota/">
+      <span class="tit">Mentoria ROTA</span>
+      <span class="sub">Para quem já se entende e quer sustentar as próprias decisões. Em grupo ou individual, para você ou para o casal.</span>
     </a>
 
     <div class="divisoria">gratuito</div>
