@@ -34,7 +34,7 @@
   font-size:1.0625rem; line-height:1.2; letter-spacing:.14em; text-transform:uppercase;
   color:var(--m-texto); text-decoration:none;
 }
-.menu-topo .menu-marca small{
+.menu-topo .menu-marca-titulo{
   display:block; margin-top:4px;
   font-family:"Inter","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif; font-weight:500;
   font-size:.8125rem; letter-spacing:.04em; text-transform:none; color:var(--m-acento);
