@@ -107,6 +107,13 @@ li::marker{color:var(--texto-2)}
 .perguntas dt{font-weight:600;margin-top:var(--e3)}
 .perguntas dt:first-child{margin-top:0}
 .perguntas dd{margin:.25rem 0 0}
+.perguntas details{border-bottom:1px solid var(--fio)}
+.perguntas details:first-child{border-top:1px solid var(--fio)}
+.perguntas summary{font-weight:600;cursor:pointer;list-style:none;position:relative;padding:var(--e2) 2rem var(--e2) 0}
+.perguntas summary::-webkit-details-marker{display:none}
+.perguntas summary::after{content:"+";position:absolute;right:.25rem;top:50%;transform:translateY(-50%);font-weight:400;font-size:1.375rem;color:var(--texto-2)}
+.perguntas details[open] summary::after{content:"−"}
+.perguntas details p{margin:0 0 var(--e2)}
 
 /* passos */
 .passos{counter-reset:p;list-style:none;padding:0}
