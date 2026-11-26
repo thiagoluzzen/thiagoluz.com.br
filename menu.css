@@ -1,7 +1,7 @@
 /* =====================================================================
-   thiagoluz.com.br — menu do topo, igual em todas as paginas (25/11/2026)
-   Uma fonte so': a pagina inicial, as internas e o blog (servido pelo app)
-   ligam este arquivo. Marca a esquerda (sempre «Thiago Luz», decisao dele),
+   thiagoluz.com.br — menu do topo das paginas internas e do blog (25/11/2026)
+   Uma fonte so': as paginas internas e o blog (servido pelo app) ligam este
+   arquivo. A pagina inicial NAO tem menu: abre direto na foto (pedido dele). Marca a esquerda (sempre «Thiago Luz», decisao dele),
    quatro links a direita; a pagina aberta leva aria-current="page" e ganha
    o fio dourado, o mesmo do rodape. Sem JavaScript: no celular os links
    descem para a segunda linha.
@@ -48,7 +48,7 @@
   transition:color .15s ease, text-decoration-color .15s ease;
 }
 .menu-topo nav a:hover{color:var(--m-texto); text-decoration-color:var(--m-fio)}
-.menu-topo nav a[aria-current="page"]{color:var(--m-texto); text-decoration-color:var(--m-acento)}
+.menu-topo nav a[aria-current]{color:var(--m-texto); text-decoration-color:var(--m-acento)}
 .menu-topo a:focus-visible{outline:2px solid var(--m-texto); outline-offset:3px}
 
 @media (max-width:34rem){

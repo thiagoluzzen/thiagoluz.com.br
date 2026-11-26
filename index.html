@@ -47,10 +47,9 @@
     font-family:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size:1.0625rem;line-height:1.6;
     -webkit-font-smoothing:antialiased;
+    padding:2.5rem 1.25rem 3rem;
   }
-  /* 25/11/2026: o respiro saiu do body para a coluna, para o menu do topo
-     (/menu.css) ocupar a largura inteira. content-box mantem os 30rem. */
-  .env{max-width:30rem;margin:0 auto;padding:2.5rem 1.25rem 3rem;box-sizing:content-box}
+  .env{max-width:30rem;margin:0 auto}
 
   /* ── topo ── */
   .topo{text-align:center;margin-bottom:2.5rem}
@@ -171,24 +170,17 @@
   footer a:hover{color:var(--quente)}
 
   @media (max-width:26rem){
-    .env{padding:2rem 1rem 2.5rem}
+    body{padding:2rem 1rem 2.5rem}
     .ancora{font-size:1.3125rem}
     .btn{padding:1rem 1.0625rem;gap:.75rem}
   }
 </style>
 <!-- Medicao (GA G-3C6Z7XHLK9, Pixel 1267024997190625): so carrega depois do
      "Aceitar" do aviso. Ver /consentimento.js. Sem a imagem noscript do Pixel. -->
-<link rel="stylesheet" href="/menu.css">
 <script src="/consentimento.js" defer></script>
 <script src="/medicao.js" defer></script>
 </head>
 <body>
-<header class="menu-topo">
-  <div class="menu-topo-dentro">
-    <a class="menu-marca" href="/">Thiago Luz<small>Terapeuta Mentor de Famílias e Casais</small></a>
-    <nav aria-label="Páginas do site"><a href="/rota/">Mentoria ROTA</a><a href="/grupo-de-constelacao/">Constelação</a><a href="/grupo-de-estudos/">Estudos</a><a href="/blog">Blog</a></nav>
-  </div>
-</header>
 <main class="env">
 
   <header class="topo">
