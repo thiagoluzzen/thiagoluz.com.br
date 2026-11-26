@@ -2,7 +2,7 @@
    thiagoluz.com.br — menu do topo das paginas internas e do blog (25/11/2026)
    Uma fonte so': as paginas internas e o blog (servido pelo app) ligam este
    arquivo. A pagina inicial NAO tem menu: abre direto na foto (pedido dele). Marca a esquerda (sempre «Thiago Luz», decisao dele),
-   quatro links a direita; a pagina aberta leva aria-current="page" e ganha
+   cinco links a direita; a pagina aberta leva aria-current="page" e ganha
    o fio dourado, o mesmo do rodape. Sem JavaScript: no celular os links
    descem para a segunda linha.
    Cores pelo fundo (Emenda 15): marinho -> dourado quente; preto (.tema-preto,
