@@ -1,0 +1,57 @@
+/* =====================================================================
+   thiagoluz.com.br — menu do topo, igual em todas as paginas (25/11/2026)
+   Uma fonte so': a pagina inicial, as internas e o blog (servido pelo app)
+   ligam este arquivo. Marca a esquerda (sempre «Thiago Luz», decisao dele),
+   quatro links a direita; a pagina aberta leva aria-current="page" e ganha
+   o fio dourado, o mesmo do rodape. Sem JavaScript: no celular os links
+   descem para a segunda linha.
+   Cores pelo fundo (Emenda 15): marinho -> dourado quente; preto (.tema-preto,
+   a ROTA) -> dourado fosco. Texto areia no marinho 10,6:1; no preto 13,9:1.
+   ===================================================================== */
+@font-face{font-family:"Inter";font-weight:500;font-display:swap;src:url("/fontes/inter-500.woff2") format("woff2")}
+@font-face{font-family:"League Spartan";font-weight:700;font-display:swap;src:url("/fontes/league-spartan-700.woff2") format("woff2")}
+
+.menu-topo{
+  --m-fundo:#0C1F3D; --m-texto:#F7F5EF; --m-texto-2:#D8CFC0;
+  --m-acento:#D0B96C; --m-fio:rgba(247,245,239,.14);
+  background:var(--m-fundo); color:var(--m-texto);
+  border-bottom:1px solid var(--m-fio);
+  font-family:"Inter","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.tema-preto .menu-topo{--m-fundo:#0A0A0A; --m-acento:#B99B5F}
+
+.menu-topo-dentro{
+  box-sizing:border-box;
+  max-width:calc(40rem + 2 * max(1.5rem,8vw)); margin:0 auto;
+  padding:12px max(1.5rem,8vw);
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:4px 24px;
+}
+
+.menu-topo .menu-marca{
+  display:block; padding:4px 0;
+  font-family:"League Spartan","Montserrat",system-ui,sans-serif; font-weight:700;
+  font-size:1.0625rem; line-height:1.2; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--m-texto); text-decoration:none;
+}
+.menu-topo .menu-marca small{
+  display:block; margin-top:4px;
+  font-family:"Inter","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif; font-weight:500;
+  font-size:.8125rem; letter-spacing:.04em; text-transform:none; color:var(--m-acento);
+}
+
+.menu-topo nav{display:flex; flex-wrap:wrap; gap:0 20px}
+.menu-topo nav a{
+  display:block; padding:12px 0;
+  font-size:.875rem; font-weight:500; line-height:20px;
+  color:var(--m-texto-2); text-decoration:underline 2px transparent; text-underline-offset:8px;
+  transition:color .15s ease, text-decoration-color .15s ease;
+}
+.menu-topo nav a:hover{color:var(--m-texto); text-decoration-color:var(--m-fio)}
+.menu-topo nav a[aria-current="page"]{color:var(--m-texto); text-decoration-color:var(--m-acento)}
+.menu-topo a:focus-visible{outline:2px solid var(--m-texto); outline-offset:3px}
+
+@media (max-width:34rem){
+  .menu-topo-dentro{padding:12px 16px 0}
+  .menu-topo nav{flex-basis:100%; gap:0 16px}
+}
